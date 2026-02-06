@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "~~municipal-code": {
+      "command": "/Users/dustinsmacmini/MunicipalMCP/.venv/bin/python3",
+      "args": ["/Users/dustinsmacmini/MunicipalMCP/municode-mcp-server.py"]
+    }
+  }
+}
