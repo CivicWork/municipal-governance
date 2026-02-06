@@ -155,7 +155,7 @@ Officials and staff who report ethics violations in good faith are typically pro
 - Proceedings may be closed under OMA exemptions for personnel/litigation matters
 - Final actions must be taken in open session
 
-## Integration with Other Skills
+## Related Skills
 
 - **Parliamentary procedure**: Recusal timing and procedures during meetings
 - **Open meetings/FOIA**: Ethics complaints may involve closed session discussions; financial disclosures are public records
@@ -164,8 +164,20 @@ Officials and staff who report ethics violations in good faith are typically pro
 
 ## Using Connected Tools
 
-- Use `~~municipal-code` to look up local ethics ordinance provisions
-- When connected tools are unavailable, reference the state ethics statute cited in `municipal.local.md`
+Use `~~municipal-code` to look up local ethics ordinance provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+
+**Common search patterns for ethics analysis** (use `search_municipal_codes` with these queries):
+- Ethics ordinance: `"ethics"`, `"code of ethics"`, `"standards of conduct"`
+- Conflicts of interest: `"conflict of interest"`, `"prohibited interest"`, `"financial interest"`
+- Gift restrictions: `"gift ban"`, `"gift restriction"`, `"prohibited gifts"`
+- Recusal and abstention: `"recusal"`, `"abstention"`, `"disqualification"`
+- Nepotism: `"nepotism"`, `"relatives"`, `"family members"`
+- Financial disclosure: `"statement of economic interests"`, `"financial disclosure"`
+- Post-employment: `"revolving door"`, `"post-employment"`, `"former official"`
+
+**Workflow tip**: Many municipalities have a dedicated ethics chapter — use `titles_only=true` to find it quickly, then use `get_code_structure` to browse its sections.
+
+When connected tools are unavailable, reference the state ethics statute cited in `municipal.local.md` and suggest manual verification.
 
 **Planned connectors** (not yet available — plugin works without these):
 - `~~document-management` — financial disclosure forms and ethics opinions

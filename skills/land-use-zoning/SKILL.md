@@ -272,8 +272,20 @@ Municipalities increasingly use zoning and regulatory tools to promote or requir
 
 ## Using Connected Tools
 
-- Use `~~municipal-code` to look up zoning provisions
-- When connected tools are unavailable, note the gap and suggest manual verification
+Use `~~municipal-code` to look up zoning provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+
+**Common search patterns for zoning analysis** (use `search_municipal_codes` with these queries):
+- Zoning districts and use tables: `"zoning district"`, `"permitted uses"`, `"conditional use"`
+- Dimensional standards: `"setback"`, `"building height"`, `"lot coverage"`, `"floor area ratio"`
+- Variances and special uses: `"variance"`, `"special use permit"`, `"zoning board of appeals"`
+- PUD and development agreements: `"planned unit development"`, `"development agreement"`
+- TIF districts: `"tax increment"`, `"redevelopment area"`, `"TIF"`
+- Nonconforming uses: `"nonconforming"`, `"legal nonconforming"`, `"amortization"`
+- Overlay districts: `"overlay district"`, `"historic district"`, `"floodplain"`
+
+**Workflow tip**: Use `titles_only=true` first to identify the zoning title/chapter structure, then drill into specific sections with `get_code_section`.
+
+When connected tools are unavailable, note the gap and suggest manual verification via the municipality's code website.
 
 **Planned connectors** (not yet available — plugin works without these):
 - `~~agenda-management` — development application status
@@ -289,7 +301,7 @@ Check `municipal.local.md` for:
 - Plan commission structure
 - State-specific procedures
 
-## Skills Referenced
+## Related Skills
 
 - `municipal-code-analysis` — zoning code interpretation, amendment analysis, and cross-referencing
 - `public-finance` — TIF districts, special assessments, and fiscal impact of development proposals

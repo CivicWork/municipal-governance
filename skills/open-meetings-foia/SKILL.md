@@ -377,9 +377,129 @@ Social media presents contemporary traps for elected officials at the intersecti
 - If you maintain an official social media presence, do not block constituents
 - When in doubt, take the discussion to a properly noticed public meeting
 
+## FOIA Exemption Decision Tree
+
+When a FOIA request is received, apply this 4-step analysis to each responsive record:
+
+### Step 1: Is It a Public Record?
+- Was it prepared, owned, used, or retained by the public body?
+- Is it related to the transaction of public business?
+- **If no to both** → Not a public record. No obligation to produce. Document the determination.
+- **If yes** → Proceed to Step 2.
+
+### Step 2: Does an Exemption Apply?
+Review applicable exemptions. Common exemption categories:
+
+| Category | Typical Scope | Common Errors |
+|----------|--------------|---------------|
+| **Personal privacy** | Personnel files, medical records, SSNs, home addresses of certain employees | Over-applying to all employee information; names and salaries are generally public |
+| **Law enforcement** | Active investigations, informant identities, security plans | Continuing to withhold after investigation closes |
+| **Legal privilege** | Attorney-client communications, attorney work product | Applying to all communications CC'ing an attorney |
+| **Deliberative process** | Pre-decisional recommendations, draft policy memos | Withholding factual information embedded in deliberative documents |
+| **Trade secrets** | Proprietary business information submitted to government | Accepting "confidential" labels without independent analysis |
+
+- **If no exemption applies** → Release in full. Proceed to Step 4.
+- **If exemption may apply** → Proceed to Step 3.
+
+### Step 3: Can Exempt Material Be Separated?
+- Redact only the exempt portions and release the rest
+- The obligation is to produce as much as possible, not to withhold entire documents because a portion is exempt
+- Use black-out redaction with the exemption citation noted on each redaction
+- **Partial disclosure is the default** — full withholding is appropriate only when the entire document is exempt
+
+### Step 4: Document the Determination
+- For full grants: provide records with a cover letter
+- For partial grants: provide redacted records with an explanation of each exemption applied
+- For full denials: cite the specific statutory exemption(s) and explain the basis
+- Include notice of appeal rights in all denial or partial denial responses
+
+## Closed Session Exception Framework
+
+### Threshold Question
+Before entering closed session, ask: "Could a reasonable member of the public understand why this topic qualifies for closed session under a specific statutory exception?"
+
+If the answer is no, the matter should be discussed in open session.
+
+### Exception-by-Exception Analysis
+
+**Personnel Matters**
+- **Valid**: Discussing discipline, termination, or performance evaluation of a specific, named employee
+- **Invalid**: Discussing general personnel policies, staffing levels, or department reorganization (these are policy matters — open session)
+- **Motion language**: "I move to enter closed session to discuss the appointment, employment, compensation, discipline, performance, or dismissal of [a specific employee / specific employees]."
+
+**Litigation**
+- **Valid**: Discussing strategy for pending litigation; evaluating settlement terms; conferring with the municipal attorney on probable or imminent litigation
+- **Invalid**: Discussing whether to enact an ordinance because "someone might sue" (speculation about possible future litigation is insufficient in most states)
+- **Motion language**: "I move to enter closed session to discuss pending litigation, [Case Name v. Municipality], and to confer with the municipal attorney on matters of probable litigation."
+
+**Real Estate**
+- **Valid**: Discussing price, terms, and strategy for acquiring a specific parcel; negotiating lease terms
+- **Invalid**: Discussing whether the municipality should pursue a general policy of acquiring parkland (policy discussion — open session)
+- **Motion language**: "I move to enter closed session to discuss the purchase or lease of real property, specifically [description sufficient to identify without compromising negotiation]."
+
+### Return to Open Session
+> "We are returning to open session. Let the record reflect that no action was taken in closed session." [Or: "During closed session, the [council/board] directed the city attorney to [action], and the following action is recommended for a vote in open session: [state action]."]
+
+## Template FOIA Response Language
+
+### Full Grant
+> Dear [Requester]:
+>
+> This letter is in response to your Freedom of Information Act request dated [date], in which you requested [description].
+>
+> Enclosed please find the responsive records. There are [X] pages at a cost of $[X] per page, totaling $[X]. [Or: No fees are charged for this request.]
+>
+> If you have questions, please contact [FOIA Officer] at [contact information].
+
+### Partial Grant (with redactions)
+> Dear [Requester]:
+>
+> This letter is in response to your FOIA request dated [date]. Enclosed are the responsive records, with certain information redacted as follows:
+>
+> - Pages [X-Y]: [Exemption citation] — [brief explanation, e.g., "personal home addresses of employees exempt under Section X"]
+>
+> The redacted information is exempt from disclosure under [State FOIA statute citation]. You have the right to appeal this partial denial to [appeal body] within [X] days.
+
+### Full Denial
+> Dear [Requester]:
+>
+> This letter is in response to your FOIA request dated [date], in which you requested [description].
+>
+> After review, the requested records are exempt from disclosure in their entirety under [specific statutory citation(s)]. The basis for this determination is [explanation].
+>
+> You have the right to appeal this denial to [appeal body] within [X] days. You may also file suit in [court].
+
+### Extension Notice
+> Dear [Requester]:
+>
+> This letter acknowledges your FOIA request dated [date]. We require additional time to respond because [reason — e.g., volume of records, need to consult with another body, records stored off-site].
+>
+> We are invoking the [X]-day extension permitted under [statute citation]. You may expect a response on or before [new deadline date].
+
+### Clarification Request
+> Dear [Requester]:
+>
+> We have received your FOIA request dated [date]. To locate the responsive records, we need additional information:
+>
+> - [Specific clarifying question, e.g., "Can you specify the date range for the emails you are requesting?"]
+>
+> Please respond at your earliest convenience. The statutory response clock will resume when we receive your clarification.
+
 ## Using Connected Tools
 
-- When connected tools are unavailable, work from uploaded documents and suggest manual verification
+Use `~~municipal-code` to look up local open meetings and FOIA provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+
+**Common search patterns for OMA/FOIA analysis** (use `search_municipal_codes` with these queries):
+- Open meetings provisions: `"open meetings"`, `"public meetings"`, `"meeting notice"`
+- Public comment rules: `"public comment"`, `"public participation"`, `"public hearing"`
+- Closed session: `"closed session"`, `"executive session"`, `"closed meeting"`
+- FOIA/records access: `"freedom of information"`, `"public records"`, `"records request"`
+- Records retention: `"records retention"`, `"record keeping"`, `"destruction of records"`
+- Meeting minutes: `"minutes"`, `"meeting record"`, `"verbatim record"`
+
+**Workflow tip**: OMA and FOIA requirements are often codified in state statute rather than municipal code. Use `~~municipal-code` for local rules and procedures that supplement state law, and reference `municipal.local.md` for the applicable state statutes.
+
+When connected tools are unavailable, work from uploaded documents and suggest manual verification.
 
 **Planned connectors** (not yet available — plugin works without these):
 - `~~document-management` — FOIA responses and records
@@ -413,7 +533,7 @@ Check `municipal.local.md` for:
 6. Is our response defensible?
 7. Are we being helpful?
 
-## Cross-References
+## Related Skills
 
 - **`parliamentary-procedure`** — Meeting conduct, quorum rules, voting procedures, and procedural requirements that operate alongside open meetings obligations
 - **`ethics-conflicts`** — Ethics complaints may involve closed session deliberation; financial disclosure statements and ethics filings are public records subject to FOIA

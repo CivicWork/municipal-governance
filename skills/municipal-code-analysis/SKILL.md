@@ -135,8 +135,63 @@ Code sections rarely stand alone. Always check for:
 
 ## Using Connected Tools
 
-- Use `~~municipal-code` to look up specific code sections
-- When connected tools are unavailable, note the gap and suggest manual verification
+### MunicipalMCP Tool Reference
+
+The `~~municipal-code` connection provides access to municipal codes via the Municode digital library. Use values from `municipal.local.md` for `municipality_name` and `state_abbr` in all tool calls.
+
+| Tool | Purpose | Key Parameters |
+|------|---------|---------------|
+| `search_municipal_codes` | Full-text search of code provisions | `municipality_name`, `state_abbr`, `search_query`, `page_size` (default 10), `titles_only` (boolean) |
+| `get_code_section` | Retrieve full text of a specific code section | `municipality_name`, `state_abbr`, `node_id` (required) |
+| `get_code_structure` | Browse table of contents / navigate code hierarchy | `municipality_name`, `state_abbr`, `node_id` (optional — omit for top-level TOC) |
+| `get_municipality_info` | Confirm municipality is in Municode and see available products | `municipality_name`, `state_abbr` |
+| `get_municipality_url` | Get URL to the municipality's Municode library page | `municipality_name`, `state_abbr` |
+| `list_municipalities` | List all Municode municipalities in a state | `state_abbr` |
+| `get_states_info` | Get state-level information | `state_abbr` |
+
+### Common Workflows
+
+**Search-then-Read** (most common pattern):
+1. Use `search_municipal_codes` with a targeted query to find relevant provisions
+2. Review search result snippets and note the `node_id` of relevant sections
+3. Use `get_code_section` with the `node_id` to retrieve full section text
+4. Repeat for cross-referenced sections
+
+**Browse-then-Read** (when exploring unfamiliar code areas):
+1. Use `get_code_structure` without a `node_id` to get the top-level table of contents
+2. Identify the relevant title (e.g., "Zoning," "Finance," "Administration")
+3. Use `get_code_structure` with the title's `node_id` to drill into chapters
+4. Continue drilling until you find the target section
+5. Use `get_code_section` to retrieve the full text
+
+**Validation** (confirm municipality availability):
+1. Use `get_municipality_info` to verify the municipality is in the Municode system
+2. If the name doesn't match, use `list_municipalities` to find the exact name Municode uses
+3. Use `get_municipality_url` to provide a direct link for manual verification
+
+### Search Tips
+
+- Use `titles_only=true` to search headings only — faster, useful for finding the right chapter or article
+- Use precise legal terms (e.g., "conditional use permit" rather than "special permission")
+- Set `page_size=20` for broad scans when you need to survey a topic area
+- Search for defined terms (e.g., "as defined in") to find the definitions section
+- Try multiple search terms — municipal codes vary widely in terminology
+
+### Common Pitfalls
+
+- **`node_id` is required for `get_code_section`**: You cannot retrieve section text without it. Get the `node_id` from search results or `get_code_structure`.
+- **Search results return snippets, not full text**: Always follow up with `get_code_section` for the complete provision.
+- **Municipality name must match Municode's records**: "City of Springfield" vs. "Springfield" — if a lookup fails, use `list_municipalities` to find the exact name.
+- **Codes may not reflect recent amendments**: Online codes can lag behind adopted ordinances. Note the "current through" date when citing code provisions.
+- **Not all municipalities use Municode**: If `get_municipality_info` returns no results, the municipality may use a different code publisher (American Legal, General Code, etc.).
+
+### When Tools Are Unavailable
+
+When the `~~municipal-code` connection is not available:
+- Note the gap explicitly in your analysis
+- Work from uploaded code documents, screenshots, or user-provided section text
+- Suggest the user verify current code provisions via their municipality's code website
+- Cite section numbers based on available information and flag them for verification
 
 **Planned connectors** (not yet available — plugin works without these):
 - `~~agenda-management` — legislation history

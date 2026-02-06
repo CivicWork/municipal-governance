@@ -247,6 +247,122 @@ For detailed guidance on evaluating whether a conflict exists and the applicable
 - Minutes kept but may be sealed
 - Cannot take final action in closed session (usually)
 
+## Scripted Chair Language
+
+Exact language the chair can use for common meeting situations. Adapt as needed for local conventions.
+
+### Opening an Agenda Item
+> "The next item on the agenda is [Item Number], [Description]. I'll ask [staff member] to present. After the presentation, I'll open it up for questions and discussion."
+
+### Calling for a Motion
+> "Is there a motion on this item?"
+> [After motion] "We have a motion by [Member] to [substance]. Is there a second?"
+> [After second] "Moved by [Member], seconded by [Member]. Is there discussion?"
+
+### Calling the Vote
+> "Seeing no further discussion, all those in favor say 'aye.' [Pause] All those opposed say 'nay.' [Pause] The motion carries [or fails], [X] to [Y]."
+
+### Unclear Voice Vote
+> "The chair is unable to determine the result. I'll ask for a roll call vote. Clerk, please call the roll."
+
+### Handling a Point of Order
+> "State your point of order."
+> [After hearing it] "The point is [well taken / not well taken]. [Explanation]."
+> [If appealed] "The ruling of the chair has been appealed. Is there a second to the appeal? [If seconded] The question is: shall the decision of the chair be sustained? All those in favor of sustaining the chair's ruling say 'aye.' All those opposed say 'nay.'"
+
+### Opening a Public Hearing
+> "This is a public hearing on [subject]. I will now open the public hearing. Anyone wishing to speak on this matter may come to the podium. Please state your name and address for the record. You will have [X] minutes."
+
+### Closing a Public Hearing
+> "Is there anyone else wishing to speak? [Pause] Seeing no one, I will close the public hearing. The matter is now before the [council/board] for discussion and action."
+
+### Announcing a Recusal
+> "[Member Name] has declared a conflict of interest on this item and is recusing [himself/herself/themselves]. Let the record reflect that [Member Name] has left the dais and is not participating in discussion or voting on this item."
+
+## Conflict Resolution Scenarios
+
+### Scenario 1: Member Speaks Out of Turn
+**Situation**: A member begins speaking on an item without being recognized by the chair.
+**Chair response**: "Excuse me, [Member]. I need to recognize speakers. [Other Member] currently has the floor. I'll recognize you when they are finished."
+
+### Scenario 2: Disruptive Public Comment
+**Situation**: A member of the public becomes disruptive, uses personal attacks, or exceeds their time.
+**Chair response**: "Sir/Ma'am, I need to ask you to address your comments to the [council/board] and refrain from personal remarks. You have [X] seconds remaining."
+**If behavior continues**: "I'm going to ask you to conclude your remarks. If you're unable to do so respectfully, I'll need to move to the next speaker."
+**Last resort**: "I'm calling a recess. We will resume in [X] minutes." (Do NOT have the speaker removed unless there is a genuine safety threat.)
+
+### Scenario 3: Attempt to Revisit a Decided Vote
+**Situation**: A member wants to reopen discussion on an item already voted upon.
+**Chair response**: "That item has already been acted upon. A motion to reconsider may be made by a member who voted on the prevailing side, and it must be made at this meeting or the next regular meeting, per our rules of procedure."
+
+### Scenario 4: Loss of Quorum Mid-Meeting
+**Situation**: A member leaves and quorum is lost.
+**Chair response**: "The clerk has informed me that we no longer have a quorum. The [council/board] cannot take any further action. We can continue discussion for informational purposes only, or I will entertain a motion to adjourn. All remaining action items will be carried to the next meeting."
+
+### Scenario 5: Multiple Pending Amendments
+**Situation**: An amendment to an amendment is offered while a first amendment is pending.
+**Chair response**: "We have a second-degree amendment on the floor. We must first dispose of the amendment to the amendment, then the first amendment, before voting on the main motion. Let's take these in order. The question before us is the amendment to the amendment: [state it]. Is there discussion on this amendment?"
+
+## Quasi-Judicial Hearing Procedures
+
+Some matters before a municipal body are quasi-judicial rather than legislative. The distinction has important procedural consequences.
+
+### Legislative vs. Quasi-Judicial
+
+| Feature | Legislative | Quasi-Judicial |
+|---------|------------|----------------|
+| **Nature** | General policy decisions affecting the community | Applying existing standards to a specific application |
+| **Examples** | Rezoning, ordinance adoption, budget | Variances, special use permits, license revocations |
+| **Standard** | Policy judgment, broad discretion | Findings of fact based on evidence in the record |
+| **Ex parte contacts** | Generally permitted (lobbying is normal) | Prohibited — all evidence must be presented in the hearing |
+| **Basis for decision** | Political, economic, community values | Evidence and testimony in the record, measured against code standards |
+| **Appeal** | Political (elections) or legislative challenge | Judicial review (court examines the record) |
+
+### Quasi-Judicial Hearing Script
+
+1. **Chair opens**: "This is a quasi-judicial hearing on [Application/Case No.]. All testimony will be taken under oath. Members of the [board/commission] are reminded that their decision must be based solely on the evidence presented at this hearing and the applicable standards in our code."
+
+2. **Ex parte disclosure**: "Before we begin, do any members have ex parte communications to disclose regarding this application?" [Each member discloses or states none]
+
+3. **Swearing in**: "Will all persons intending to testify please rise and raise your right hand? Do you swear or affirm that the testimony you are about to give is the truth, the whole truth, and nothing but the truth?"
+
+4. **Staff presentation**: Staff presents findings, applicable code standards, and staff recommendation
+
+5. **Applicant presentation**: Applicant presents case, may call witnesses
+
+6. **Public testimony**: Supporters, then opponents, then neutral (or all together per local rules)
+
+7. **Applicant rebuttal**: Applicant may respond to opposing testimony
+
+8. **Close evidentiary record**: "The evidentiary portion of this hearing is closed. No further testimony or evidence will be accepted."
+
+9. **Deliberation and findings**: Board discusses the evidence against each applicable standard and makes findings of fact. "Based on the evidence in the record, I find that the applicant [has/has not] met the standard for [criterion]."
+
+## Motion Quick Reference Card
+
+| Motion | Exact Language | Second? | Debatable? | Amendable? | Vote |
+|--------|---------------|---------|-----------|-----------|------|
+| **Main motion** | "I move that [action]." | Yes | Yes | Yes | Majority |
+| **Amend** | "I move to amend the motion by [adding/striking/substituting] [text]." | Yes | Yes | Yes | Majority |
+| **Table** | "I move to table this item." | Yes | No | No | Majority |
+| **Untable** | "I move to take [item] from the table." | Yes | No | No | Majority |
+| **Previous question** | "I move the previous question." (calls for immediate vote) | Yes | No | No | 2/3 |
+| **Postpone** | "I move to postpone this item to [date/meeting]." | Yes | Yes | Yes | Majority |
+| **Refer to committee** | "I move to refer this matter to [committee] for [purpose]." | Yes | Yes | Yes | Majority |
+| **Reconsider** | "I move to reconsider the vote on [item]." | Yes | Yes | No | Majority |
+| **Point of order** | "Point of order, Mr./Madam Chair." | No | No | No | Chair rules |
+| **Appeal** | "I appeal the decision of the chair." | Yes | Yes | No | Majority |
+| **Adjourn** | "I move to adjourn." | Yes | No | No | Majority |
+
+## Using Connected Tools
+
+No `~~municipal-code` connection is needed for parliamentary procedure. This skill relies on the adopted rules of procedure and Robert's Rules of Order.
+
+When connected tools are unavailable, work from uploaded rules of procedure and meeting agendas.
+
+**Planned connectors** (not yet available — plugin works without these):
+- `~~agenda-management` — meeting agendas, motion tracking, voting records
+
 ## Municipal Configuration
 
 Check `municipal.local.md` for:
@@ -256,7 +372,7 @@ Check `municipal.local.md` for:
 - Public comment procedures
 - Executive session procedures
 
-## Cross-References
+## Related Skills
 
 - **`ethics-conflicts`** — Recusal procedures, conflict of interest evaluation, and ethics standards that apply during meetings
 - **`open-meetings-foia`** — Meeting notice requirements, closed session procedures, public access and recording rights

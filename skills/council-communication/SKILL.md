@@ -367,7 +367,101 @@ When presenting amendments to ordinances, resolutions, or other municipal docume
 - The codification service updates the official code, applies section renumbering, and updates cross-references
 - Allow lead time for codification — the official code may not reflect recent amendments immediately
 
-## Skills Referenced
+## Ordinance vs. Resolution Decision Framework
+
+Choosing the wrong instrument creates legal confusion and may require corrective action. Use this framework:
+
+| Factor | Ordinance | Resolution |
+|--------|-----------|------------|
+| **Nature** | Law of general application | Expression of policy, opinion, or specific action |
+| **Duration** | Permanent until amended or repealed | Typically for a specific instance or time period |
+| **Codification** | Codified in the municipal code | Filed but not codified |
+| **Adoption requirements** | May require multiple readings, public hearing, publication | Usually adopted in a single meeting |
+| **Amendment** | Requires an amending ordinance | May be superseded by a later resolution |
+| **Examples** | Zoning regulations, tax levies, business licensing | Contract approvals, fee schedules, honorary designations, grant applications |
+
+### Decision Rule
+- **Does this create, amend, or repeal a rule of general application?** → Ordinance
+- **Does this approve a specific action, express a position, or set a fee?** → Resolution
+- **When in doubt**: Check state law and local practice. Some states require ordinances for specific actions (e.g., appropriations, tax levies).
+
+### Common Mistakes
+- Using a resolution for something that should be an ordinance (e.g., creating a new regulation). The resolution is likely unenforceable.
+- Using an ordinance for a one-time action (e.g., approving a specific contract). Overkill and creates unnecessary codification burden.
+- **Fee schedules**: Practice varies. Some municipalities adopt fee schedules by ordinance (ensures full public hearing process); others adopt by resolution (allows faster updates). Check your local convention.
+
+## Legal Drafting Standards
+
+### Precision of Mandatory/Permissive Language
+
+| Word | Meaning | Use When |
+|------|---------|----------|
+| **Shall** | Mandatory — creates an obligation or prohibition | Imposing a duty: "The applicant shall submit..." |
+| **Must** | Mandatory — equivalent to "shall" in modern drafting | Interchangeable with "shall"; some modern style guides prefer "must" |
+| **May** | Permissive — grants authority or discretion | Granting authority: "The director may grant an extension..." |
+| **Should** | Advisory — not enforceable | Avoid in ordinances; appropriate in plans and policy documents |
+| **Will** | Future tense — describes what will happen | Avoid in operative provisions; use in recitals or explanatory text |
+
+**Rule**: In operative sections, use only "shall" (or "must") and "may." If you're not sure whether a provision is mandatory or permissive, it probably needs to be rewritten for clarity.
+
+### Structural Rules
+1. **One concept per section**: Each section should address a single requirement or grant of authority
+2. **Definitions before use**: Define terms before using them, or in a separate definitions section referenced early
+3. **General before specific**: Place general rules before exceptions and special cases
+4. **Active voice**: "The applicant shall submit" (not "An application shall be submitted by the applicant")
+5. **Present tense**: "A violation is a misdemeanor" (not "A violation shall be a misdemeanor")
+
+### Common Drafting Errors
+
+| Error | Example | Fix |
+|-------|---------|-----|
+| **Ambiguous "and/or"** | "The fee shall include permit and/or inspection costs" | Choose "and" or "or"; if both are possible, write it out: "permit costs, inspection costs, or both" |
+| **Dangling reference** | "As provided in Section 5" when Section 5 doesn't exist yet | Verify all cross-references before adoption |
+| **Inconsistent terms** | "Applicant" in Section 1, "petitioner" in Section 3, same meaning | Pick one term, define it, use it consistently |
+| **Shall + passive** | "Notice shall be given" | "The clerk shall give notice" — identify who has the duty |
+| **Missing enforcement** | Creates a prohibition but no penalty or enforcement mechanism | Add: "A violation of this section is subject to [penalty]" |
+
+## Constituent Triage Protocol
+
+Not all constituent contacts require the same response speed or handling. Use this 3-tier routing system:
+
+### Tier 1: Immediate (respond within 4 hours)
+
+| Indicator | Examples | Route To |
+|-----------|----------|----------|
+| Public safety threat | "There's a sinkhole in the road," "Street light arcing" | 911 or non-emergency police/fire dispatch; notify public works |
+| Utility emergency | "No water," "Sewer backup into home" | Utility on-call; notify public works director |
+| Imminent legal deadline | "FOIA appeal deadline is tomorrow" | Municipal attorney + FOIA officer |
+| Media inquiry before deadline | "Reporter needs comment by 3pm" | City manager / communications officer |
+
+### Tier 2: Priority (respond within 24 hours)
+
+| Indicator | Examples | Route To |
+|-----------|----------|----------|
+| Code complaint affecting quality of life | "Neighbor's property is a health hazard" | Code enforcement with courtesy acknowledgment to constituent |
+| Service delivery failure | "Trash wasn't picked up," "Pothole on Main St" | Public works with tracking number to constituent |
+| Meeting-related | "I want to speak at Wednesday's meeting" | Clerk's office + confirm public comment procedures |
+| Elected official request | Fellow council member asks for information | Relevant department head, CC city manager |
+
+### Tier 3: Standard (respond within 48 hours)
+
+| Indicator | Examples | Route To |
+|-----------|----------|----------|
+| General inquiry | "What are the rules for building a fence?" | Relevant department with informational response |
+| Policy opinion | "The city should do more about [issue]" | Acknowledge and log; share with council if pattern emerges |
+| Compliment or thank-you | "Great job on the park renovation" | Forward to relevant department; add to council report |
+| Request for meeting | "Can I meet with the mayor about...?" | Schedule per mayor's availability and protocol |
+
+### Red Flags for Escalation
+
+Regardless of tier, escalate immediately to the city manager and/or municipal attorney if the communication:
+- Contains a **threat** (to persons, property, or legal action)
+- References **pending litigation** or an attorney
+- Involves a **discrimination complaint** or civil rights allegation
+- Comes from a **regulatory agency** (EPA, state AG, OSHA, etc.)
+- Involves an **elected official's potential conflict of interest**
+
+## Related Skills
 
 - `parliamentary-procedure` — motion-ready language, amendment procedures, and voting requirements
 - `open-meetings-foia` — minutes requirements, public notice content, and open meetings compliance

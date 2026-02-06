@@ -346,7 +346,20 @@ Deferring routine maintenance to balance the operating budget is a short-term fi
 
 ## Using Connected Tools
 
-- When connected tools are unavailable, work from uploaded budget documents
+Use `~~municipal-code` to look up fiscal and budget-related code provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+
+**Common search patterns for public finance analysis** (use `search_municipal_codes` with these queries):
+- Tax levy and property tax: `"tax levy"`, `"property tax"`, `"tax rate"`, `"equalized assessed value"`
+- Budget and appropriations: `"budget"`, `"appropriation"`, `"fiscal year"`, `"annual budget"`
+- Procurement and purchasing: `"procurement"`, `"purchasing"`, `"competitive bidding"`, `"bid threshold"`
+- Debt and bonds: `"general obligation"`, `"revenue bond"`, `"debt limit"`, `"bond ordinance"`
+- Fee schedules: `"fee schedule"`, `"user fees"`, `"permit fees"`, `"impact fees"`
+- TIF and special districts: `"tax increment"`, `"special service area"`, `"business improvement"`
+- Fund balance and reserves: `"fund balance"`, `"reserve fund"`, `"contingency"`
+
+**Workflow tip**: Budget and finance provisions are often spread across multiple titles (Finance, Administration, specific enterprise funds). Use `titles_only=true` to map the relevant chapters before diving into specific sections.
+
+When connected tools are unavailable, work from uploaded budget documents.
 
 **Planned connectors** (not yet available — plugin works without these):
 - `~~document-management` — budget documents and CAFRs
