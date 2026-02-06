@@ -33,13 +33,13 @@ That's it — most commands work immediately with just an uploaded document and 
 
 ### Claude Code (CLI)
 
-1. Clone this repository into your working directory
-2. The plugin files will be automatically detected by Claude Code
+1. Clone this repository
+2. Open Claude Code in the repository directory — plugin files are detected automatically
 
 ### After Installation
 
 1. **Edit `municipal.local.md`** — Replace all `[bracket placeholders]` with your municipality's specific information (council structure, code references, budget context, policy priorities, contacts)
-2. **(Optional) Configure MCP servers** — Edit `.mcp.json` to connect your municipal code provider. See [Connectors](#connectors) below.
+2. **(Optional) Configure connectors** — See [Connectors](#connectors) below to enable live municipal code lookup.
 
 ## Commands
 
@@ -70,44 +70,36 @@ The plugin works for **any US municipality** — `municipal.local.md` is where y
 
 ## Skills
 
-The plugin includes 9 domain expertise modules that Claude draws on automatically:
+The plugin includes 9 domain expertise modules. You don't invoke these directly — Claude activates them automatically based on what you're working on.
 
-| Skill | Purpose |
-|-------|---------|
-| `municipal-code-analysis` | Code interpretation, cross-referencing, hierarchy of authority |
-| `parliamentary-procedure` | Robert's Rules, motions, voting procedures |
-| `land-use-zoning` | Zoning districts, variances, development review, TIF |
-| `public-finance` | Fund accounting, budgets, debt instruments, fiscal impact |
-| `intergovernmental-relations` | Home rule, preemption, grants, regional cooperation |
-| `policy-evaluation` | Bardach framework, stakeholder analysis, decision matrices |
-| `open-meetings-foia` | Open Meetings Act compliance, FOIA procedures |
-| `council-communication` | Staff reports, ordinances, resolutions, constituent correspondence |
-| `ethics-conflicts` | Conflict of interest, recusal, gift restrictions, financial disclosure |
+| Skill | What it covers | Example prompt |
+|-------|---------------|----------------|
+| `municipal-code-analysis` | Interpreting and cross-referencing code sections | "Does this amendment conflict with Chapter 19?" |
+| `parliamentary-procedure` | Robert's Rules, motions, voting requirements | "What vote threshold do we need for this rezoning?" |
+| `land-use-zoning` | Zoning, variances, TIF districts, development review | "Walk me through the variance criteria for this parcel" |
+| `public-finance` | Budgets, fund accounting, debt, fiscal impact | "What's the pension impact of this staffing proposal?" |
+| `intergovernmental-relations` | Home rule, preemption, grants, regional bodies | "Could the state preempt this local regulation?" |
+| `policy-evaluation` | Comparing options, stakeholder impact, decision matrices | "Evaluate these three approaches to short-term rentals" |
+| `open-meetings-foia` | Open Meetings Act, FOIA, records retention | "Can we discuss this in executive session?" |
+| `council-communication` | Staff reports, ordinances, resolutions, minutes | "Draft an ordinance summary for the council packet" |
+| `ethics-conflicts` | Conflicts of interest, recusal, gift rules, disclosure | "Do I need to recuse myself from this vote?" |
 
 ## Connectors
 
-Configure `.mcp.json` to connect external tools. The plugin uses the `~~category` pattern so you can swap providers without changing any command or skill files.
+The plugin can optionally connect to external data sources via MCP servers. Currently supported:
 
-### Available Now
+| Connector | Description | Provider |
+|-----------|-------------|----------|
+| `~~municipal-code` | Look up municipal code sections by reference | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
 
-| Connector | Description | Default Provider |
-|-----------|-------------|-----------------|
-| `~~municipal-code` | Municipal code lookup | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
-
+Without connectors, commands work with uploaded documents and web search.
 
 ## How It Works
 
-```
-User command → Load municipal.local.md → Retrieve documents (upload or MCP) → Reference skills → Structured output
-```
-
-All commands produce consistent Markdown output with:
-- Executive summary
-- Status indicators (red/yellow/green) for attention priority
-- Tables for comparisons
-- Confidence levels and assumptions
-- Legal disclaimers where appropriate
-- Recommended next steps
+1. You run a command (e.g., `/municipal-governance:meeting-prep`) and upload a document
+2. Claude loads your municipality's configuration from `municipal.local.md`
+3. Relevant skills activate automatically based on the subject matter
+4. You get structured output with an executive summary, attention-priority flags (red/yellow/green), and recommended next steps
 
 ## License
 
