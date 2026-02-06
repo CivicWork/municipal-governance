@@ -75,7 +75,7 @@ User command → Load municipal.local.md → Retrieve documents (upload or MCP) 
 ### MCP Server Connections
 
 Defined in `.mcp.json`. **Active:**
-- `~~municipal-code` — Municode lookup via [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Python, installed at `~/MunicipalMCP` with Python 3.12 venv). Path is machine-specific — must be updated per-installation.
+- `~~municipal-code` — Municode lookup via [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Python, installed at `~/CivicWork/MunicipalMCP` with Python 3.12 venv). Path is machine-specific — must be updated per-installation.
 
 **Planned** (referenced in skills as "Planned connectors" — plugin works without these):
 - `~~document-management` — agenda packets, staff reports, FOIA records
