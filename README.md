@@ -74,15 +74,15 @@ The plugin includes 9 domain expertise modules. You don't invoke these directly 
 
 | Skill | What it covers | Example prompt |
 |-------|---------------|----------------|
-| `municipal-code-analysis` | Interpreting and cross-referencing code sections | "Does this amendment conflict with Chapter 19?" |
-| `parliamentary-procedure` | Robert's Rules, motions, voting requirements | "What vote threshold do we need for this rezoning?" |
-| `land-use-zoning` | Zoning, variances, TIF districts, development review | "Walk me through the variance criteria for this parcel" |
-| `public-finance` | Budgets, fund accounting, debt, fiscal impact | "What's the pension impact of this staffing proposal?" |
-| `intergovernmental-relations` | Home rule, preemption, grants, regional bodies | "Could the state preempt this local regulation?" |
-| `policy-evaluation` | Comparing options, stakeholder impact, decision matrices | "Evaluate these three approaches to short-term rentals" |
-| `open-meetings-foia` | Open Meetings Act, FOIA, records retention | "Can we discuss this in executive session?" |
-| `council-communication` | Staff reports, ordinances, resolutions, minutes | "Draft an ordinance summary for the council packet" |
-| `ethics-conflicts` | Conflicts of interest, recusal, gift rules, disclosure | "Do I need to recuse myself from this vote?" |
+| `municipal-code-analysis` | Code interpretation, cross-referencing, MunicipalMCP tool reference | "Does this amendment conflict with Chapter 19?" |
+| `parliamentary-procedure` | Robert's Rules, scripted chair language, quasi-judicial hearings | "What do I say to open a public hearing?" |
+| `land-use-zoning` | Zoning, variances, TIF districts, form-based codes, inclusionary zoning | "Walk me through the variance criteria for this parcel" |
+| `public-finance` | Budgets, fund accounting, debt, pension/OPEB, CIP planning | "What's the pension impact of this staffing proposal?" |
+| `intergovernmental-relations` | Home rule, preemption decision tree, IGA evaluation, grant scoring | "Should we pursue this grant opportunity?" |
+| `policy-evaluation` | Bardach framework, logic models, decision matrices, stakeholder analysis | "Evaluate these three approaches to short-term rentals" |
+| `open-meetings-foia` | OMA, FOIA exemption decision tree, closed session framework, response templates | "Can we discuss this in executive session?" |
+| `council-communication` | Staff reports, ordinances vs resolutions, legal drafting, constituent triage | "Should this be an ordinance or a resolution?" |
+| `ethics-conflicts` | Conflicts of interest, recusal procedures, gift rules, financial disclosure | "Do I need to recuse myself from this vote?" |
 
 ## Connectors
 
@@ -90,9 +90,9 @@ The plugin can optionally connect to external data sources via MCP servers. Curr
 
 | Connector | Description | Provider |
 |-----------|-------------|----------|
-| `~~municipal-code` | Look up municipal code sections by reference | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
+| `~~municipal-code` | Search and retrieve municipal code sections (7 tools) | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
 
-Without connectors, commands work with uploaded documents and web search.
+Six of the nine skills include domain-specific search patterns for `~~municipal-code` (e.g., zoning queries, ethics ordinance lookups, budget code references). Without connectors, commands work with uploaded documents and web search.
 
 ## How It Works
 
