@@ -54,6 +54,8 @@ municipal-governance/             (CivicWorkPlugin/)
 ├── .claude-plugin/
 │   └── plugin.json               # v0.2.0, author: CivicWork
 ├── .mcp.json                     # ~~municipal-code → MunicipalMCP (local install)
+├── agents/
+│   └── setup-municipality.md     # Interactive municipal.local.md configuration wizard
 ├── .claude/
 │   └── settings.local.json       # Project-level Claude Code settings
 ├── commands/

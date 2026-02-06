@@ -14,6 +14,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 
 ```
 .
+├── agents/             # 1 utility agent (setup-municipality)
 ├── commands/           # 7 slash command workflow definitions
 ├── skills/             # 9 domain expertise modules with SKILL.md files
 ├── .claude-plugin/     # Plugin metadata (plugin.json v0.2.0)
@@ -23,7 +24,12 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 └── CivicWorkPluginReference.md  # Developer reference
 ```
 
-### Two-Tier Design
+### Design
+
+**Agents** (`/agents/`): Utility agents that run as Claude Code subprocesses in Cowork with file editing access:
+- `setup-municipality` — Interactive configuration wizard that walks users through customizing `municipal.local.md`
+
+**Commands and Skills** form the two-tier domain expertise layer:
 
 1. **Commands** (`/commands/`): User-facing workflows invoked via `/municipal-governance:*`. Each command:
    - Loads `municipal.local.md` configuration first

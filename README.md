@@ -17,7 +17,7 @@ This plugin automates common workflows for municipal elected officials and staff
 ## Quick Start
 
 1. Install the plugin (see Installation below)
-2. Customize `municipal.local.md` with your municipality's information
+2. Run the **Setup Municipality** agent from the Agents tab to configure your municipality interactively — or edit `municipal.local.md` manually
 3. Try `/municipal-governance:agenda-synthesis` with an uploaded agenda packet PDF
 
 That's it — most commands work immediately with just an uploaded document and your municipal configuration.
@@ -38,7 +38,7 @@ That's it — most commands work immediately with just an uploaded document and 
 
 ### After Installation
 
-1. **Edit `municipal.local.md`** — Replace all `[bracket placeholders]` with your municipality's specific information (council structure, code references, budget context, policy priorities, contacts)
+1. **Configure your municipality** — Open the **Setup Municipality** agent from the Agents tab. It will walk you through the setup interactively and fill in `municipal.local.md` for you. Alternatively, edit `municipal.local.md` manually in a text editor.
 2. **(Optional) Configure connectors** — See [Connectors](#connectors) below to enable live municipal code lookup.
 
 ## Commands
