@@ -65,14 +65,14 @@ municipal-governance/             (CivicWorkPlugin/)
 │   ├── budget-review.md          # /municipal-governance:budget-review
 │   └── intergovernmental-scan.md # /municipal-governance:intergovernmental-scan
 ├── skills/
-│   ├── municipal-code-analysis/SKILL.md   # Code interpretation, cross-referencing
-│   ├── parliamentary-procedure/SKILL.md   # Robert's Rules, motions, voting
+│   ├── municipal-code-analysis/SKILL.md   # Code interpretation, cross-referencing, MunicipalMCP tool reference
+│   ├── parliamentary-procedure/SKILL.md   # Robert's Rules, motions, voting, scripted chair language
 │   ├── land-use-zoning/SKILL.md           # Zoning, variances, TIF, development review
 │   ├── public-finance/SKILL.md            # Fund accounting, budgets, debt, fiscal impact
-│   ├── intergovernmental-relations/SKILL.md # Home rule, preemption, grants
-│   ├── policy-evaluation/SKILL.md         # Bardach framework, stakeholder analysis
-│   ├── open-meetings-foia/SKILL.md        # OMA compliance, FOIA procedures
-│   ├── council-communication/SKILL.md     # Staff reports, ordinances, resolutions
+│   ├── intergovernmental-relations/SKILL.md # Home rule, preemption, grants, IGA evaluation
+│   ├── policy-evaluation/SKILL.md         # Bardach framework, logic models, stakeholder analysis
+│   ├── open-meetings-foia/SKILL.md        # OMA compliance, FOIA procedures, exemption decision tree
+│   ├── council-communication/SKILL.md     # Staff reports, ordinances, resolutions, legal drafting
 │   └── ethics-conflicts/SKILL.md          # Conflict of interest, recusal, gift bans
 ├── municipal.local.md            # Municipality-specific configuration (template)
 ├── CLAUDE.md                     # Claude Code developer guidance
@@ -117,6 +117,24 @@ Only one connector is actively configured:
 
 **Important:** The `.mcp.json` path is machine-specific and must be updated per-installation. The current file points to the developer's local MunicipalMCP install.
 
+### MunicipalMCP Tools (7 tools via `~~municipal-code`)
+
+The `municipal-code-analysis` skill contains the authoritative tool reference. Summary:
+
+| Tool | Purpose | Key Parameters |
+|------|---------|---------------|
+| `search_municipal_codes` | Full-text search of code provisions | `municipality_name`, `state_abbr`, `search_query`, `page_size`, `titles_only` |
+| `get_code_section` | Retrieve full text of a specific section | `municipality_name`, `state_abbr`, `node_id` |
+| `get_code_structure` | Browse table of contents / navigate hierarchy | `municipality_name`, `state_abbr`, `node_id` (optional) |
+| `get_municipality_info` | Confirm municipality is in Municode | `municipality_name`, `state_abbr` |
+| `get_municipality_url` | Get URL to Municode library page | `municipality_name`, `state_abbr` |
+| `list_municipalities` | List all Municode municipalities in a state | `state_abbr` |
+| `get_states_info` | Get state-level information | `state_abbr` |
+
+**Common workflows:** Search-then-read (`search_municipal_codes` → `get_code_section`), browse-then-read (`get_code_structure` → drill down → `get_code_section`), validation (`get_municipality_info` to confirm availability).
+
+**Tool guidance in skills:** 6 of 9 skills reference `~~municipal-code` with domain-specific search patterns. The 3 that don't need it: `policy-evaluation`, `council-communication`, `parliamentary-procedure`. All 6 point back to `municipal-code-analysis` for the full tool reference.
+
 ### Planned Connectors
 
 These categories are referenced in skills as "Planned connectors" but have no MCP server implementations yet:
@@ -159,11 +177,13 @@ Each SKILL.md follows this pattern:
 2. Overview and purpose
 3. Conceptual framework / methodology
 4. Analysis techniques with step-by-step procedures
-5. Output template (for skills producing formal analyses: policy-evaluation, public-finance, municipal-code-analysis)
-6. Quality standards and common pitfalls
-7. Using Connected Tools section (active tools + planned connectors)
-8. Municipal Configuration section (what to look for in `municipal.local.md`)
-9. Caveats and limitations
+5. Decision frameworks, templates, and practitioner tools (decision trees, scoring rubrics, scripted language, checklists)
+6. Output template (for skills producing formal analyses: policy-evaluation, public-finance, municipal-code-analysis)
+7. Quality standards and common pitfalls
+8. `## Related Skills` — cross-references to 2-4 related skills (standardized header across all 9 skills)
+9. `## Using Connected Tools` — active `~~municipal-code` search patterns (6 skills) + planned connectors
+10. `## Municipal Configuration` — what to look for in `municipal.local.md`
+11. Caveats and limitations
 
 ### Command Structure
 
@@ -199,6 +219,24 @@ Each command .md follows this pattern:
 5. Include "Using Connected Tools" section with active tools and planned connectors
 6. Include "Municipal Configuration" section listing relevant `municipal.local.md` fields
 7. Update README.md skills table
+
+---
+
+## Skill Content Summary
+
+Each skill provides domain expertise. Beyond the base frameworks, skills include practitioner-level tools:
+
+| Skill | Key Practitioner Tools |
+|-------|----------------------|
+| `municipal-code-analysis` | MunicipalMCP tool reference (7 tools), search-then-read/browse-then-read workflows, search tips, pitfalls |
+| `policy-evaluation` | Bardach eightfold path, logic models, decision matrices, risk assessment matrix |
+| `public-finance` | Pension/OPEB metrics table, CIP prioritization criteria, fiscal impact output template |
+| `land-use-zoning` | Form-based code transect, inclusionary zoning tools, zoning-targeted search patterns |
+| `intergovernmental-relations` | IGA 13-item checklist + red flags, preemption 4-step decision tree, grant go/no-go scoring rubric, legislative impact template |
+| `parliamentary-procedure` | Scripted chair language (8 situations), 5 conflict resolution scenarios, quasi-judicial hearing script, motion quick reference card (11 motions) |
+| `open-meetings-foia` | FOIA exemption 4-step decision tree + exemption comparison table, closed session exception framework with motion language, 5 FOIA response templates |
+| `council-communication` | Ordinance vs resolution decision framework, shall/may/must drafting guide + common errors table, 3-tier constituent triage protocol |
+| `ethics-conflicts` | Conflict evaluation framework, recusal procedure, gift restriction analysis, ethics-targeted search patterns |
 
 ---
 
