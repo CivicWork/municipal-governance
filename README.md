@@ -94,16 +94,6 @@ Configure `.mcp.json` to connect external tools. The plugin uses the `~~category
 |-----------|-------------|-----------------|
 | `~~municipal-code` | Municipal code lookup | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
 
-### Planned (Not Yet Implemented)
-
-These connectors are referenced in skills but not yet wired. The plugin works without them — commands gracefully fall back to working with uploaded documents.
-
-| Connector | Description | Example Providers |
-|-----------|-------------|-------------------|
-| `~~document-management` | Agenda packets, staff reports | Filesystem, Box, SharePoint |
-| `~~agenda-management` | Agenda/legislation tracking | Legistar, Granicus, CivicEngage |
-| `~~communication` | Team messaging | Slack, Teams |
-| `~~project-tracking` | Action item tracking | Linear, Jira |
 
 ## How It Works
 
