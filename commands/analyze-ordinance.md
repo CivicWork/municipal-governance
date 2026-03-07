@@ -154,19 +154,19 @@ Produce a structured briefing including:
 - **Code Sections Affected**: [list]
 
 ## Legal Authority
-[Analysis]
+[Analysis] *(Confidence: [High/Medium/Low] — [source])*
 
 ## Code Analysis
 ### Sections Amended
 [List with brief description]
 
 ### Potential Conflicts
-[Any identified conflicts or gaps]
+[Any identified conflicts or gaps] *(Confidence: [High/Medium/Low] — [e.g., "confirmed via ~~municipal-code lookup" or "inferred from section title only"])*
 
 ## Fiscal Impact
-| Category | One-Time | Ongoing |
-|----------|----------|---------|
-| [Item] | $X | $X/year |
+| Category | One-Time | Ongoing | Confidence |
+|----------|----------|---------|------------|
+| [Item] | $X | $X/year | [High/Med/Low — source] |
 
 **Total Estimated Cost**: $X
 **Funding Source**: [identified/unidentified]
@@ -187,6 +187,21 @@ Produce a structured briefing including:
 
 ## Comparable Approaches
 [From peer communities, if available]
+
+## Analysis Boundaries
+<!-- Include this section for 🟡 SIGNIFICANT and 🔴 CRITICAL classifications. Omit for 🟢 ROUTINE. -->
+
+*This ordinance analysis was produced by a single AI instance.*
+
+**Items requiring independent verification before council action:**
+- [Specific legal authority conclusion that needs attorney confirmation]
+- [Specific code conflict that needs verification against full code text]
+- [Specific fiscal estimate and the assumption it rests on]
+
+**Recommended verification steps:**
+- [ ] Municipal attorney review of [specific legal question]
+- [ ] Staff confirmation of [specific fiscal or implementation claim]
+- [ ] PolicyAide multi-agent analysis (for complex or contested ordinances — stress-tests the analysis through adversarial deliberation)
 
 ---
 *This analysis supports policy deliberation but does not constitute legal advice.

@@ -14,6 +14,25 @@ User invokes `/municipal-governance:meeting-prep`
 
 ## Workflow
 
+### 0. Scope the Briefing
+
+Before diving into the full agenda, ask the user a few quick questions to focus the analysis:
+
+1. **"How many items on this agenda need your close attention?"** — The user often knows which 2-3 items are the real decisions. Everything else can get consent-level treatment.
+2. **"Any items you're already up to speed on?"** — Skip deep analysis on items the user has background on. Mention them briefly for completeness.
+3. **"Are there specific votes you're undecided on?"** — These get the deepest treatment: code cross-references, fiscal analysis, stakeholder perspectives, and deliberation questions.
+
+If the user says "just give me everything," proceed with full analysis. If they identify focus items, use this tiered approach:
+
+| User says | Treatment |
+|-----------|-----------|
+| "Focus on this" | Full deep-dive: code analysis, fiscal impact, stakeholder perspectives, deliberation questions |
+| "I know about this one" | One-line summary, flag only if something unexpected surfaces |
+| No guidance on an item | Standard treatment: staff rec, fiscal impact, key points |
+| Consent agenda items | Brief table unless user asks to pull one |
+
+This step should take under a minute. The goal is to match the briefing depth to where the user actually needs help.
+
 ### 1. Load Municipal Context
 
 Check `municipal.local.md` for:
@@ -203,7 +222,10 @@ Produce comprehensive briefing document.
 - [Point 2]
 - [Point 3]
 
-**Fiscal Impact**: $[amount] - [one-time/ongoing] - [funding source]
+**Fiscal Impact**: $[amount] - [one-time/ongoing] - [funding source] *(Confidence: [High/Medium/Low] — [source])*
+
+**Code Impact** *(if applicable)*:
+- [Current code provision and proposed change] *(Confidence: [High/Medium/Low] — [source])*
 
 **Questions to Consider**:
 1. [Question 1]
@@ -240,6 +262,18 @@ Produce comprehensive briefing document.
 - [ ] Review [related documents]
 - [ ] [Other preparation tasks]
 
+## Analysis Boundaries
+<!-- Include only when the agenda contains 🔴 items involving code amendments, significant fiscal impact, or legal risk. Omit for routine agendas. -->
+
+*The following items received single-instance analysis that may not be sufficient for the decision at hand:*
+
+| Item | What needs verification | Recommended next step |
+|------|------------------------|----------------------|
+| [🔴 Item X] | [Specific claim — e.g., "preemption analysis assumes home rule authority"] | Attorney review |
+| [🔴 Item Y] | [Specific claim — e.g., "fiscal estimate based on staff report, not independently modeled"] | Finance staff confirmation |
+
+For complex or contested items, consider escalating to **PolicyAide multi-agent deliberation** before the vote — it stress-tests analysis through structured adversarial debate, surfacing blind spots a single-pass briefing may miss.
+
 ---
 *Briefing prepared for informational purposes.
 Contact [staff contact] with questions.*
@@ -253,10 +287,22 @@ Contact [staff contact] with questions.*
 - `municipal-code-analysis` — code amendment analysis for ordinance items
 - `ethics-conflicts` — flag items where officials may need to recuse
 
+## Depth Modes
+
+The scoping step (Step 0) determines which mode to use:
+
+| Mode | When | What you get |
+|------|------|-------------|
+| **Focused** | User identifies 2-3 items for deep analysis | Full deep-dive on focus items, one-line summaries for everything else. Fastest useful output. |
+| **Standard** | User says "cover it all" or provides no focus | Standard treatment for action items, brief for consent. The default. |
+| **Comprehensive** | User says "give me everything" or is preparing for a complex meeting | Deep analysis on all action items, code cross-references, peer comparisons, full deliberation questions. Longest output. |
+
+When in doubt, default to **Standard** and let the user escalate specific items.
+
 ## Notes
 
-- Prioritize depth over breadth - focus analysis on 🔴 and 🟡 items
-- For consent agenda items, brief descriptions are sufficient
+- Match depth to the mode selected in scoping — don't produce comprehensive output when the user asked for a focused briefing
+- For consent agenda items, brief descriptions are always sufficient unless user specifically asks to pull one
 - When agenda management tools are not connected, work from uploaded documents
 - Cross-reference policy priorities from `municipal.local.md`
 - Include relevant context from prior meetings when available

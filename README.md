@@ -97,9 +97,15 @@ Six of the nine skills include domain-specific search patterns for `~~municipal-
 ## How It Works
 
 1. You run a command (e.g., `/municipal-governance:meeting-prep`) and upload a document
-2. Claude loads your municipality's configuration from `municipal.local.md`
-3. Relevant skills activate automatically based on the subject matter
-4. You get structured output with an executive summary, attention-priority flags (red/yellow/green), and recommended next steps
+2. Claude asks a few quick scoping questions — what items matter to you, how deep should the analysis go
+3. Claude loads your municipality's configuration from `municipal.local.md`
+4. Relevant skills activate automatically based on the subject matter
+5. You get structured output with attention-priority flags (red/yellow/green), confidence indicators on key claims, and recommended next steps — matched to the depth you asked for
+6. For high-stakes items, the output includes an **Analysis Boundaries** section — a transparent disclosure of what the analysis can and cannot responsibly conclude as a single AI instance, with specific recommendations for verification (attorney review, staff confirmation, or escalation to PolicyAide's multi-agent deliberation framework)
+
+### Why Analysis Boundaries Matter
+
+Most AI tools pretend they can handle everything. This plugin tells you when it's not enough. A single AI instance is great for research, organization, and synthesis — but policy decisions with real fiscal, legal, or community impact deserve adversarial testing, independent verification, and human judgment. The plugin knows its own limits and says so.
 
 ## License
 

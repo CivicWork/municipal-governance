@@ -25,7 +25,21 @@ Check `municipal.local.md` for:
 - Policy priorities
 - Fund balance policies
 
-### 2. Determine Analysis Scope
+### 2. Scope the Analysis
+
+Ask the user what they need before proceeding:
+
+**"What are you looking at — the full budget, a specific item, an amendment, or a fiscal impact question?"**
+
+Then confirm depth:
+
+| User says | Analysis mode |
+|-----------|--------------|
+| "Walk me through the whole budget" | Full budget review — all sections |
+| "What's going on with the police department budget" | Specific item — focused on one department or line item, skip full budget sections |
+| "There's a budget amendment on the agenda" | Amendment analysis — what's changing, funding source, fund balance impact |
+| "What would this proposal cost us" | Fiscal impact — revenue/cost projections, net impact, funding options |
+| "Just the highlights" | Executive summary + key numbers + concerns only |
 
 **Full Budget Review**:
 - Overall revenue and expenditure trends
@@ -290,6 +304,23 @@ Check `municipal.local.md` for:
 |--------|--------|----------|-----------|
 | Per capita spending | $[X] | $[X] | $[X] |
 | Property tax rate | [X] | [X] | [X] |
+
+---
+
+## Analysis Boundaries
+<!-- Include for full budget reviews and fiscal impact analyses. Omit for quick highlights or single-item lookups. -->
+
+*This fiscal analysis was produced by a single AI instance based on the documents provided.*
+
+**Key assumptions that were not independently tested:**
+- [Revenue projection assumption — e.g., "assumes X% growth based on 3-year trend"]
+- [Cost estimate basis — e.g., "personnel costs estimated from budget document, not verified against actual payroll"]
+- [Comparison methodology — e.g., "peer comparison uses published budgets, which may use different accounting treatments"]
+
+**Before relying on this analysis for budget decisions:**
+- [ ] Finance director review of key figures and assumptions
+- [ ] Verify any numbers marked Medium or Low confidence against source documents
+- [ ] For significant fiscal policy changes, consider **PolicyAide multi-agent analysis** to stress-test assumptions through adversarial deliberation
 
 ---
 

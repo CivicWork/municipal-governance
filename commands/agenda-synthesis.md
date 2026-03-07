@@ -14,7 +14,17 @@ User invokes `/municipal-governance:agenda-synthesis`
 
 ## Workflow
 
-### 0. Load Municipal Context
+### 0. Quick Scope
+
+Agenda synthesis is designed for speed. Before processing, ask one question:
+
+**"Anything specific you want me to watch for, or should I flag what stands out?"**
+
+If the user names specific items or topics (e.g., "the zoning amendment" or "anything over $500K"), prioritize those in the output. Otherwise, proceed with automatic flagging based on fiscal thresholds and item types.
+
+If the user wants deep analysis of specific items, suggest escalating to `meeting-prep` instead.
+
+### 0.5. Load Municipal Context
 
 Load the municipality's configuration from `municipal.local.md`. Use council structure, meeting schedule, policy priorities, and fiscal thresholds to contextualize the synthesis. If not found, proceed with general analysis.
 

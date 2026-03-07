@@ -21,35 +21,50 @@ Read the file `municipal.local.md` in this plugin's directory. This is the confi
 
 If fields are already filled in, ask the user whether they want to update the existing configuration or start fresh.
 
-### Step 2: Gather Core Information
+### Step 2: Gather Core Information — Start with Name and State, Then Auto-Discover
 
-Start with the basics. Ask these questions conversationally — don't dump them all at once. Group them naturally and move on as the user answers.
+Start by asking just two things:
 
-**Municipality basics:**
-- What is the name of your municipality? (City of ___, Village of ___, Town of ___, etc.)
-- What state?
-- Approximate population?
-- Government type? (Council-Manager, Mayor-Council, Commission, Town Meeting)
-- Is it a home rule municipality?
+**"What's the name and state of your municipality?"** (e.g., "City of Elgin, Illinois")
 
-**Council structure:**
-- What is the governing body called? (City Council, Board of Trustees, etc.)
-- How many members, including the mayor/president?
-- Term length and staggering?
-- Ward-based, at-large, or mixed districts?
-- Regular meeting schedule? (Day, time, frequency)
+Once you have the name and state, **attempt to auto-discover as much as possible** before asking more questions. Use web search and available tools to look up:
+
+**Auto-discovery checklist:**
+- [ ] **Municode**: Search `library.municode.com/{state_abbr}` for the municipality. If found, note the slug and URL.
+- [ ] **Legistar**: Try `{municipality}.legistar.com` and common variants (e.g., `cityofelgin`, `elgin`, `elginil`). If found, note the subdomain.
+- [ ] **Population and government type**: Search for the municipality's Wikipedia page or official website — population, government type (council-manager, etc.), and home rule status are usually available.
+- [ ] **State law references**: Based on the state, pre-populate known OMA, FOIA, and ethics statute references (e.g., Illinois: OMA = 5 ILCS 120, FOIA = 5 ILCS 140, Ethics = 5 ILCS 430).
+- [ ] **Council structure**: Check the municipality's official website for governing body name, member count, meeting schedule, and ward/at-large structure.
+
+**Present what you found for confirmation:**
+
+> "Here's what I found for City of Elgin, Illinois:
+> - **Population**: ~115,000
+> - **Government**: Council-Manager, Home Rule
+> - **Council**: 7 members + Mayor, ward-based
+> - **Municipal code**: Municode at library.municode.com/il/elgin
+> - **Agendas**: [not found / found at elgin.legistar.com]
+> - **OMA**: 5 ILCS 120 | **FOIA**: 5 ILCS 140
+>
+> Does this look right? I'll fill these in and then ask you about the things I couldn't find."
+
+**Then ask conversationally about anything you couldn't auto-discover.** Group naturally and move on as the user answers. Common things you'll still need to ask:
+- Term length and staggering
+- Regular meeting schedule (day, time, frequency)
+- Meeting location
 
 ### Step 3: Code and Agenda Information
 
-**Code references:**
-- Who publishes your municipal code? (Municode, American Legal, Sterling Codifiers, General Code, etc.)
-- If they use Municode, use the `~~municipal-code` tools to look up and verify the municipality:
-  1. Call `get_municipality_info` with the municipality name and state to confirm it exists
-  2. Call `get_municipality_url` to get the direct URL
-  3. Call `get_code_structure` to identify the zoning and subdivision code title/chapter references
-- If they don't use Municode, ask for the code URL and key title references
+If not already discovered in Step 2, ask about:
 
-**Agenda system:**
+**Code references** (skip if Municode/AML/etc. was already found):
+- Who publishes your municipal code? (Municode, American Legal, Sterling Codifiers, General Code, etc.)
+- What is the URL for the online code library?
+
+**Always ask** (these aren't auto-discoverable):
+- What are the key title/chapter references for zoning and subdivision codes?
+
+**Agenda system** (skip if Legistar/Granicus was already found):
 - What system manages agendas? (Legistar, Granicus, CivicEngage, manual/email, etc.)
 - Public URL for the agenda center?
 
@@ -70,12 +85,12 @@ Start with the basics. Ask these questions conversationally — don't dump them 
 
 ### Step 5: Legal Framework
 
-**State law references:**
+**State law references** — if you pre-populated these in Step 2, confirm them and move on. Only ask if you couldn't determine the state or if the state's statutes aren't in your training data:
 - What is the state's Open Meetings Act statute reference?
 - What is the state's FOIA/public records statute reference?
 - State ethics statute reference?
 
-**Local rules:**
+**Local rules** (these require user knowledge — always ask):
 - Is there a local ethics ordinance? (code section reference)
 - Gift ban threshold?
 - Financial disclosure filing deadline?
@@ -121,7 +136,6 @@ After writing, tell the user:
 
 - Be conversational, not robotic. Don't ask all questions at once.
 - If the user doesn't know an answer, skip it and move on. Placeholders are fine.
-- Use `~~municipal-code` tools when available to look up and verify information rather than making the user type it.
-- Don't ask for information you can look up (e.g., if they give you the city name and state, try to find the Municode URL yourself).
-- For state law references, suggest common statutes if you know them (e.g., "Illinois has the Open Meetings Act at 5 ILCS 120 — is that your state's statute, or are you in a different state?"). But don't guess — ask if unsure.
-- The whole process should take 5-10 minutes, not 30.
+- **Auto-discover first, confirm second.** Use web search and available tools to look up public information about the municipality before asking the user. Present what you found and ask them to confirm or correct. This should feel like a smart assistant that did its homework, not a blank form.
+- For state law references, pre-populate if you know them confidently for that state. Confirm with the user rather than asking from scratch.
+- The whole process should take **3-5 minutes**, not 10. Auto-discovery cuts the time roughly in half.

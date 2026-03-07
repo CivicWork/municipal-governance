@@ -32,9 +32,11 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 **Commands and Skills** form the two-tier domain expertise layer:
 
 1. **Commands** (`/commands/`): User-facing workflows invoked via `/municipal-governance:*`. Each command:
-   - Loads `municipal.local.md` configuration first
+   - **Scopes the work first** — brief questions to focus depth and identify what the user actually needs (see "Scope" step in each command)
+   - Loads `municipal.local.md` configuration
    - References specific skills via `## Skills Referenced` section
-   - Produces structured Markdown output with three-tier attention indicators (🔴/🟡/🟢)
+   - Produces structured Markdown output with three-tier attention indicators (🔴/🟡/🟢) and confidence tags on key claims
+   - Supports **depth modes** (e.g., quick scan vs. comprehensive) — set during scoping
    - Lists `## Related Commands` for discoverability
    - Includes "omit if N/A" guidance on longer output templates
 
@@ -75,7 +77,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 ### Data Flow
 
 ```
-User command → Load municipal.local.md → Retrieve documents (upload or MCP) → Reference skills → Structured Markdown output
+User command → Scope the work (brief user questions) → Load municipal.local.md → Retrieve documents (upload or MCP) → Reference skills → Structured Markdown output with confidence indicators
 ```
 
 ### MCP Server Connections
@@ -100,13 +102,15 @@ All workflows depend on `municipal.local.md` being customized with municipality-
 Follow the existing pattern in `/commands/`:
 1. Define trigger and description
 2. Specify required inputs
-3. Start workflow with "Load Municipal Context" step (load `municipal.local.md`)
-4. Document step-by-step workflow
-5. Include structured output template (with "omit if N/A" guidance for optional sections)
-6. Add `## Skills Referenced` listing primary and secondary skills
-7. Add `## Related Commands` pointing to complementary commands
-8. Add `## Notes` with edge cases and graceful degradation
-9. Update README.md command table
+3. Start with a **Scoping step** — brief questions to focus depth and identify what the user needs
+4. Load Municipal Context step (load `municipal.local.md`)
+5. Document step-by-step workflow
+6. Include structured output template (with "omit if N/A" guidance for optional sections)
+7. Include **Analysis Boundaries** section in output template if the command produces analysis someone might act on (see "Single-Instance Disclosure" above)
+8. Add `## Skills Referenced` listing primary and secondary skills
+9. Add `## Related Commands` pointing to complementary commands
+10. Add `## Notes` with edge cases and graceful degradation
+11. Update README.md command table
 
 ### Adding New Skills
 
@@ -129,10 +133,43 @@ All command outputs follow consistent patterns:
 - Executive summary at top
 - Three-tier attention indicators: 🔴 (needs close review) / 🟡 (standard review) / 🟢 (consent/routine)
 - Tables for comparisons
-- Explicit confidence levels and assumptions
 - Legal disclaimers where appropriate
 - "Next Steps" or "Recommended Actions" section
 - Omit sections where data is unavailable rather than generating boilerplate
+
+### Confidence Indicators
+
+All substantive claims in command output should include a confidence tag so the user knows what's sourced vs. inferred:
+
+- **High** — directly sourced from a provided document, municipal code lookup, or official record. Example: *"Fiscal impact: $2.3M one-time (High — staff report p.3)"*
+- **Medium** — inferred from partial information, based on typical patterns, or sourced from web search. Example: *"May conflict with Title 19.07 (Medium — based on title text, no ordinance draft provided)"*
+- **Low** — based on general knowledge, analogies to other municipalities, or incomplete data. Example: *"Implementation likely requires 2-3 FTEs (Low — estimate based on peer city experience, no local staffing data)"*
+
+Confidence tags appear inline after the claim, in parentheses. Keep them brief. Don't tag every sentence — tag key facts that inform decisions: fiscal figures, legal conclusions, code conflict assessments, and implementation estimates. Routine descriptive content (item titles, meeting dates, procedural steps) doesn't need tagging.
+
+### Single-Instance Disclosure (Verification Line)
+
+This plugin runs as a single AI instance — one model, one pass, one perspective. That's appropriate for many tasks (information gathering, document synthesis, procedural guidance) but insufficient for high-stakes policy decisions.
+
+Commands must include a **verification disclosure** when their output approaches the boundary of what a single instance can responsibly provide. The disclosure:
+
+1. **Acknowledges the limitation** — this analysis was not adversarially tested, independently verified, or produced through multi-perspective deliberation
+2. **Identifies what specifically needs deeper treatment** — not a generic warning, but a list of the specific claims, conclusions, or recommendations that would benefit from further verification
+3. **Points to the next level** — PolicyAide's multi-agent deliberation framework, attorney review, staff analysis, or other appropriate escalation
+
+**When to include the disclosure:**
+- Policy research in **Decision-focused** or **Comprehensive** mode
+- Ordinance analysis classified as 🟡 SIGNIFICANT or 🔴 CRITICAL
+- Meeting prep items flagged 🔴 that involve code amendments, significant fiscal impact, or legal risk
+- Any output that includes a recommendation the user might act on directly
+
+**When it's not needed:**
+- Quick scans and exploratory research (informational, not decision-driving)
+- Agenda synthesis (summary, not analysis)
+- Constituent responses (communication, not policy)
+- Factual lookups (what does the code say about X)
+
+The disclosure is not a liability disclaimer — it's a design principle. The plugin knows its own limits and says so. This is what responsible AI deployment looks like in government.
 
 ### Cross-References
 
