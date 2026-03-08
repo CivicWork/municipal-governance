@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Claude AI plugin** (`municipal-governance`, v0.2.1) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
+This is a **Claude AI plugin** (`municipal-governance`, v0.3.0) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
 
 It provides automated workflows for ordinance analysis, meeting preparation, policy research, budget review, constituent communications, agenda synthesis, and intergovernmental scanning.
 
@@ -15,9 +15,9 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 ```
 .
 ├── agents/             # 1 utility agent (setup-municipality)
-├── commands/           # 7 slash command workflow definitions
-├── skills/             # 9 domain expertise modules with SKILL.md files
-├── .claude-plugin/     # Plugin metadata (plugin.json v0.2.1)
+├── commands/           # (legacy — retained for CLI compatibility)
+├── skills/             # 16 skills: 7 workflow commands + 9 domain expertise modules
+├── .claude-plugin/     # Plugin metadata (plugin.json v0.3.0)
 ├── .mcp.json           # MCP server connections (~~municipal-code active)
 ├── municipal.local.md  # Municipality-specific configuration (template — customize per deployment)
 ├── README.md           # User documentation with installation + quick start
@@ -29,29 +29,29 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 **Agents** (`/agents/`): Utility agents that run as Claude Code subprocesses in Cowork with file editing access:
 - `setup-municipality` — Interactive configuration wizard that walks users through customizing `municipal.local.md`
 
-**Commands and Skills** form the two-tier domain expertise layer:
+**Skills** (`/skills/*/SKILL.md`) form two tiers of domain expertise, all in the same directory format:
 
-1. **Commands** (`/commands/`): User-facing workflows invoked via `/municipal-governance:*`. Each command:
-   - **Scopes the work first** — brief questions to focus depth and identify what the user actually needs (see "Scope" step in each command)
+1. **Workflow Skills** (7): User-facing workflows invoked via `/municipal-governance:*`. Each workflow skill:
+   - **Scopes the work first** — brief questions to focus depth and identify what the user actually needs (see "Scope" step)
    - Loads `municipal.local.md` configuration
-   - References specific skills via `## Skills Referenced` section
+   - References specific domain skills via `## Skills Referenced` section
    - Produces structured Markdown output with three-tier attention indicators (🔴/🟡/🟢) and confidence tags on key claims
    - Supports **depth modes** (e.g., quick scan vs. comprehensive) — set during scoping
    - Lists `## Related Commands` for discoverability
    - Includes "omit if N/A" guidance on longer output templates
 
-2. **Skills** (`/skills/*/SKILL.md`): Domain knowledge modules containing:
+2. **Domain Skills** (9): Knowledge modules that workflow skills draw on, containing:
    - YAML frontmatter with `description` (triggers automatic activation)
    - Frameworks, methodologies, analysis techniques
    - `## Related Skills` cross-references to other skills
    - `## Using Connected Tools` with active tools and clearly marked planned connectors
    - `## Municipal Configuration` listing relevant `municipal.local.md` fields
-   - Three skills include structured output templates: `policy-evaluation`, `public-finance`, `municipal-code-analysis`
+   - Three domain skills include structured output templates: `policy-evaluation`, `public-finance`, `municipal-code-analysis`
 
-### Commands (7)
+### Workflow Skills (7)
 
-| Command | Purpose |
-|---------|---------|
+| Skill | Purpose |
+|-------|---------|
 | `analyze-ordinance` | Review ordinances against municipal code |
 | `meeting-prep` | Comprehensive meeting briefings |
 | `policy-research` | Multi-source policy research |
@@ -60,7 +60,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 | `budget-review` | Fiscal impact and budget analysis |
 | `intergovernmental-scan` | State/federal policy monitoring |
 
-### Skills (9)
+### Domain Skills (9)
 
 | Skill | Purpose |
 |-------|---------|
