@@ -367,7 +367,7 @@ DEADLINE
 
 ## Using Connected Tools
 
-Use `~~municipal-code` to look up local provisions related to intergovernmental authority. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+Use `municipal-code` to look up local provisions related to intergovernmental authority. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
 
 **Common search patterns for intergovernmental analysis** (use `search_municipal_codes` with these queries):
 - Home rule authority: `"home rule"`, `"municipal authority"`, `"police power"`
@@ -381,8 +381,8 @@ Use `~~municipal-code` to look up local provisions related to intergovernmental 
 Use web search for current state legislation and federal requirements. When connected tools are unavailable, work from uploaded documents and web search.
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~document-management` — intergovernmental agreements
-- `~~agenda-management` — related resolutions
+- `document-management` — intergovernmental agreements
+- `agenda-management` — related resolutions
 
 ## Municipal Configuration
 

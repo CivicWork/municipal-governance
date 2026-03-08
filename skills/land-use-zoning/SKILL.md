@@ -272,7 +272,7 @@ Municipalities increasingly use zoning and regulatory tools to promote or requir
 
 ## Using Connected Tools
 
-Use `~~municipal-code` to look up zoning provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+Use `municipal-code` to look up zoning provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
 
 **Common search patterns for zoning analysis** (use `search_municipal_codes` with these queries):
 - Zoning districts and use tables: `"zoning district"`, `"permitted uses"`, `"conditional use"`
@@ -288,8 +288,8 @@ Use `~~municipal-code` to look up zoning provisions. See the `municipal-code-ana
 When connected tools are unavailable, note the gap and suggest manual verification via the municipality's code website.
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~agenda-management` — development application status
-- `~~document-management` — staff reports and plans
+- `agenda-management` — development application status
+- `document-management` — staff reports and plans
 
 ## Municipal Configuration
 

@@ -321,7 +321,7 @@ Verify current status before taking action.*
 - Include advocacy opportunities
 - Update regularly during legislative sessions
 
-## Related Commands
+## Related Skills
 
 - `policy-research` — for deeper research into specific state/federal policy areas
 - `budget-review` — for fiscal impact analysis of mandate or funding changes

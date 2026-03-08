@@ -356,12 +356,12 @@ Some matters before a municipal body are quasi-judicial rather than legislative.
 
 ## Using Connected Tools
 
-No `~~municipal-code` connection is needed for parliamentary procedure. This skill relies on the adopted rules of procedure and Robert's Rules of Order.
+No `municipal-code` connection is needed for parliamentary procedure. This skill relies on the adopted rules of procedure and Robert's Rules of Order.
 
 When connected tools are unavailable, work from uploaded rules of procedure and meeting agendas.
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~agenda-management` — meeting agendas, motion tracking, voting records
+- `agenda-management` — meeting agendas, motion tracking, voting records
 
 ## Municipal Configuration
 

@@ -298,8 +298,8 @@ Use them together:
 - When connected tools are unavailable, work from uploaded documents and web search
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~document-management` — prior analyses and staff reports
-- `~~agenda-management` — historical decisions and precedents
+- `document-management` — prior analyses and staff reports
+- `agenda-management` — historical decisions and precedents
 
 ## Municipal Configuration
 

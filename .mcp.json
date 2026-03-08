@@ -1,8 +1,12 @@
 {
   "mcpServers": {
-    "~~municipal-code": {
+    "municipal-code": {
       "command": "/Users/dustinsmacmini/CivicWork/MunicipalMCP/.venv/bin/python3",
       "args": ["/Users/dustinsmacmini/CivicWork/MunicipalMCP/municode-mcp-server.py"]
+    },
+    "document-management": {
+      "type": "http",
+      "url": "https://mcp.box.com"
     }
   }
 }

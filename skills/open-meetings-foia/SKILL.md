@@ -487,7 +487,7 @@ If the answer is no, the matter should be discussed in open session.
 
 ## Using Connected Tools
 
-Use `~~municipal-code` to look up local open meetings and FOIA provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+Use `municipal-code` to look up local open meetings and FOIA provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
 
 **Common search patterns for OMA/FOIA analysis** (use `search_municipal_codes` with these queries):
 - Open meetings provisions: `"open meetings"`, `"public meetings"`, `"meeting notice"`
@@ -497,13 +497,13 @@ Use `~~municipal-code` to look up local open meetings and FOIA provisions. See t
 - Records retention: `"records retention"`, `"record keeping"`, `"destruction of records"`
 - Meeting minutes: `"minutes"`, `"meeting record"`, `"verbatim record"`
 
-**Workflow tip**: OMA and FOIA requirements are often codified in state statute rather than municipal code. Use `~~municipal-code` for local rules and procedures that supplement state law, and reference `municipal.local.md` for the applicable state statutes.
+**Workflow tip**: OMA and FOIA requirements are often codified in state statute rather than municipal code. Use `municipal-code` for local rules and procedures that supplement state law, and reference `municipal.local.md` for the applicable state statutes.
 
 When connected tools are unavailable, work from uploaded documents and suggest manual verification.
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~document-management` — FOIA responses and records
-- `~~agenda-management` — meeting notices and schedules
+- `document-management` — FOIA responses and records
+- `agenda-management` — meeting notices and schedules
 
 ## Municipal Configuration
 

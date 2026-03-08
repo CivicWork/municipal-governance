@@ -90,9 +90,9 @@ The plugin can optionally connect to external data sources via MCP servers. Curr
 
 | Connector | Description | Provider |
 |-----------|-------------|----------|
-| `~~municipal-code` | Search and retrieve municipal code sections (7 tools) | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
+| `municipal-code` | Search and retrieve municipal code sections (7 tools) | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
 
-Six of the nine skills include domain-specific search patterns for `~~municipal-code` (e.g., zoning queries, ethics ordinance lookups, budget code references). Without connectors, commands work with uploaded documents and web search.
+Six of the nine skills include domain-specific search patterns for `municipal-code` (e.g., zoning queries, ethics ordinance lookups, budget code references). Without connectors, commands work with uploaded documents and web search.
 
 ## How It Works
 

@@ -164,7 +164,7 @@ Officials and staff who report ethics violations in good faith are typically pro
 
 ## Using Connected Tools
 
-Use `~~municipal-code` to look up local ethics ordinance provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+Use `municipal-code` to look up local ethics ordinance provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
 
 **Common search patterns for ethics analysis** (use `search_municipal_codes` with these queries):
 - Ethics ordinance: `"ethics"`, `"code of ethics"`, `"standards of conduct"`
@@ -180,7 +180,7 @@ Use `~~municipal-code` to look up local ethics ordinance provisions. See the `mu
 When connected tools are unavailable, reference the state ethics statute cited in `municipal.local.md` and suggest manual verification.
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~document-management` — financial disclosure forms and ethics opinions
+- `document-management` — financial disclosure forms and ethics opinions
 
 ## Municipal Configuration
 

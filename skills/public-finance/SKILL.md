@@ -346,7 +346,7 @@ Deferring routine maintenance to balance the operating budget is a short-term fi
 
 ## Using Connected Tools
 
-Use `~~municipal-code` to look up fiscal and budget-related code provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
+Use `municipal-code` to look up fiscal and budget-related code provisions. See the `municipal-code-analysis` skill for the full MunicipalMCP tool reference.
 
 **Common search patterns for public finance analysis** (use `search_municipal_codes` with these queries):
 - Tax levy and property tax: `"tax levy"`, `"property tax"`, `"tax rate"`, `"equalized assessed value"`
@@ -362,8 +362,8 @@ Use `~~municipal-code` to look up fiscal and budget-related code provisions. See
 When connected tools are unavailable, work from uploaded budget documents.
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~document-management` — budget documents and CAFRs
-- `~~agenda-management` — budget amendments, levy ordinances
+- `document-management` — budget documents and CAFRs
+- `agenda-management` — budget amendments, levy ordinances
 
 ## Municipal Configuration
 

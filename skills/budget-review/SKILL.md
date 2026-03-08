@@ -353,7 +353,7 @@ Contact Finance Department for clarifications.*
 - Distinguish between controllable and non-controllable costs
 - Identify structural balance vs. one-time fixes
 
-## Related Commands
+## Related Skills
 
 - `meeting-prep` — if the budget is on an upcoming meeting agenda
 - `policy-research` — for research into policy alternatives with different fiscal profiles

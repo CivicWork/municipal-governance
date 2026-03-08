@@ -15,10 +15,9 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 ```
 .
 ├── agents/             # 1 utility agent (setup-municipality)
-├── commands/           # (legacy — retained for CLI compatibility)
 ├── skills/             # 16 skills: 7 workflow commands + 9 domain expertise modules
 ├── .claude-plugin/     # Plugin metadata (plugin.json v0.3.0)
-├── .mcp.json           # MCP server connections (~~municipal-code active)
+├── .mcp.json           # MCP server connections (municipal-code active)
 ├── municipal.local.md  # Municipality-specific configuration (template — customize per deployment)
 ├── README.md           # User documentation with installation + quick start
 └── CivicWorkPluginReference.md  # Developer reference
@@ -37,7 +36,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
    - References specific domain skills via `## Skills Referenced` section
    - Produces structured Markdown output with three-tier attention indicators (🔴/🟡/🟢) and confidence tags on key claims
    - Supports **depth modes** (e.g., quick scan vs. comprehensive) — set during scoping
-   - Lists `## Related Commands` for discoverability
+   - Lists `## Related Skills` for discoverability
    - Includes "omit if N/A" guidance on longer output templates
 
 2. **Domain Skills** (9): Knowledge modules that workflow skills draw on, containing:
@@ -83,13 +82,13 @@ User command → Scope the work (brief user questions) → Load municipal.local.
 ### MCP Server Connections
 
 Defined in `.mcp.json`. **Active:**
-- `~~municipal-code` — Municode lookup via [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Python, installed at `~/CivicWork/MunicipalMCP` with Python 3.12 venv). Path is machine-specific — must be updated per-installation.
+- `municipal-code` — Municode lookup via [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Python, installed at `~/CivicWork/MunicipalMCP` with Python 3.12 venv). Path is machine-specific — must be updated per-installation.
 
 **Planned** (referenced in skills as "Planned connectors" — plugin works without these):
-- `~~document-management` — agenda packets, staff reports, FOIA records
-- `~~agenda-management` — legislation tracking, meeting schedules
-- `~~communication` — team messaging
-- `~~project-tracking` — action item tracking
+- `document-management` — agenda packets, staff reports, FOIA records
+- `agenda-management` — legislation tracking, meeting schedules
+- `communication` — team messaging
+- `project-tracking` — action item tracking
 
 ## Working with This Codebase
 
@@ -97,18 +96,18 @@ Defined in `.mcp.json`. **Active:**
 
 All workflows depend on `municipal.local.md` being customized with municipality-specific information. The template includes sections for: municipality basics, council structure, code references, agenda management, TIF districts, budget context, fiscal impact thresholds, policy priorities, ethics/disclosure rules, contacts, committees, procedural notes, and regional context.
 
-### Adding New Commands
+### Adding New Workflow Skills
 
-Follow the existing pattern in `/commands/`:
+Follow the existing pattern in `skills/your-skill-name/SKILL.md`:
 1. Define trigger and description
 2. Specify required inputs
 3. Start with a **Scoping step** — brief questions to focus depth and identify what the user needs
 4. Load Municipal Context step (load `municipal.local.md`)
 5. Document step-by-step workflow
 6. Include structured output template (with "omit if N/A" guidance for optional sections)
-7. Include **Analysis Boundaries** section in output template if the command produces analysis someone might act on (see "Single-Instance Disclosure" above)
+7. Include **Analysis Boundaries** section in output template if the skill produces analysis someone might act on (see "Single-Instance Disclosure" above)
 8. Add `## Skills Referenced` listing primary and secondary skills
-9. Add `## Related Commands` pointing to complementary commands
+9. Add `## Related Skills` pointing to complementary skills
 10. Add `## Notes` with edge cases and graceful degradation
 11. Update README.md command table
 
@@ -174,7 +173,7 @@ The disclosure is not a liability disclaimer — it's a design principle. The pl
 ### Cross-References
 
 - Every skill has a `## Related Skills` section referencing 2-4 related skills
-- Every command has `## Skills Referenced` (primary + secondary skills) and `## Related Commands`
+- Every command has `## Skills Referenced` (primary + secondary skills) and `## Related Skills`
 - Maintain these when adding or modifying skills/commands
 - See `CivicWorkPluginReference.md` for the full command → skill mapping table
 
@@ -197,7 +196,7 @@ Claude Desktop strictly validates the plugin.json schema. The `author` field **m
 
 When a plugin with `.mcp.json` entries is uploaded to Claude Desktop, those entries get written to three places:
 
-1. The global config (`~/Library/Application Support/Claude/claude_desktop_config.json`) — prefixed as `municipal-governance:~~<name>`
+1. The global config (`~/Library/Application Support/Claude/claude_desktop_config.json`) — prefixed as `municipal-governance:<name>`
 2. The marketplace copy inside `local-agent-mode-sessions/.../cowork_plugins/marketplaces/local-desktop-app-uploads/municipal-governance/.mcp.json`
 3. The cache copy inside `local-agent-mode-sessions/.../cowork_plugins/cache/local-desktop-app-uploads/municipal-governance/<version>/.mcp.json`
 
@@ -205,4 +204,4 @@ If the project `.mcp.json` is later cleaned, the uploaded copies and global conf
 
 ### .mcp.json contains machine-specific paths
 
-The current `.mcp.json` has `~~municipal-code` configured with absolute paths to the developer's local MunicipalMCP installation. This must be updated per-installation. Other connector categories are referenced in skills as planned integrations but are not yet wired — the plugin works without them.
+The current `.mcp.json` has `municipal-code` configured with absolute paths to the developer's local MunicipalMCP installation. This must be updated per-installation. Other connector categories are referenced in skills as planned integrations but are not yet wired — the plugin works without them.

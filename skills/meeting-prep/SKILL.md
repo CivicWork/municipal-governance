@@ -19,7 +19,7 @@ User invokes `/municipal-governance:meeting-prep`
 ## Inputs
 
 - Meeting date and type (regular session, committee, special meeting, workshop)
-- Agenda packet (file upload or link via `~~agenda-management`)
+- Agenda packet (file upload or link via `agenda-management`)
 - Specific items of interest (optional)
 
 ## Workflow
@@ -53,7 +53,7 @@ Check `municipal.local.md` for:
 
 ### 2. Retrieve Agenda and Materials
 
-Pull the agenda packet from `~~agenda-management` or accept uploaded documents.
+Pull the agenda packet from `agenda-management` or accept uploaded documents.
 
 Documents to look for:
 - Official agenda
@@ -317,7 +317,7 @@ When in doubt, default to **Standard** and let the user escalate specific items.
 - Cross-reference policy priorities from `municipal.local.md`
 - Include relevant context from prior meetings when available
 
-## Related Commands
+## Related Skills
 
 - `agenda-synthesis` — for a quicker, lighter-weight agenda summary
 - `analyze-ordinance` — for deep analysis of any ordinance on the agenda

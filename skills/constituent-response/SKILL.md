@@ -55,9 +55,9 @@ Identify:
 ### 3. Gather Information
 
 Using available tools:
-- `~~municipal-code`: Relevant ordinances
-- `~~document-management`: Prior correspondence, policies
-- `~~agenda-management`: Related council actions
+- `municipal-code`: Relevant ordinances
+- `document-management`: Prior correspondence, policies
+- `agenda-management`: Related council actions
 - Web search: General information if needed
 
 ### 4. Draft Response
@@ -269,7 +269,7 @@ attend council meeting / etc.].
 - **FOIA requests**: If a constituent message is actually a public records request (FOIA), do not attempt a substantive response. Instead, acknowledge receipt and route to the designated FOIA officer listed in `municipal.local.md`. FOIA requests have legal deadlines and procedures that must be followed.
 - **Threatening or abusive communications**: If a message contains threats of violence, route to law enforcement immediately. For abusive but non-threatening messages, respond briefly and professionally, acknowledge any legitimate underlying concern, and do not engage with the hostile tone. If harassment is persistent, consult the municipal attorney about appropriate steps.
 
-## Related Commands
+## Related Skills
 
 - `policy-research` — if the constituent's question requires deeper research to answer well
 - `analyze-ordinance` — if the inquiry relates to a specific ordinance or code provision

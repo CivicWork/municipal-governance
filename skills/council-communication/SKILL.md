@@ -331,9 +331,9 @@ Official record of meeting proceedings. Legal document that memorializes actions
 - When connected tools are unavailable, work from uploaded documents and examples
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~document-management` — templates and past examples
-- `~~agenda-management` — ordinance/resolution tracking
-- `~~communication` — internal coordination
+- `document-management` — templates and past examples
+- `agenda-management` — ordinance/resolution tracking
+- `communication` — internal coordination
 
 ## Municipal Configuration
 

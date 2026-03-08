@@ -42,7 +42,7 @@ Extract and identify:
 
 ### 3. Code Cross-Reference
 
-Using `~~municipal-code` (when available), identify all existing code sections affected by the proposed ordinance:
+Using `municipal-code` (when available), identify all existing code sections affected by the proposed ordinance:
 - Sections explicitly referenced
 - Sections that may conflict
 - Sections being superseded
@@ -171,7 +171,7 @@ Produce a structured briefing including:
 [List with brief description]
 
 ### Potential Conflicts
-[Any identified conflicts or gaps] *(Confidence: [High/Medium/Low] — [e.g., "confirmed via ~~municipal-code lookup" or "inferred from section title only"])*
+[Any identified conflicts or gaps] *(Confidence: [High/Medium/Low] — [e.g., "confirmed via municipal-code lookup" or "inferred from section title only"])*
 
 ## Fiscal Impact
 | Category | One-Time | Ongoing | Confidence |
@@ -227,12 +227,12 @@ Complex legal questions should be referred to the municipal attorney.*
 
 ## Notes
 
-- When `~~municipal-code` is not available, note code sections that should be manually reviewed
+- When `municipal-code` is not available, note code sections that should be manually reviewed
 - Always include the legal disclaimer
 - Flag any items that require attorney review
 - Cross-reference with `municipal.local.md` policy priorities when available
 
-## Related Commands
+## Related Skills
 
 - `meeting-prep` — if the ordinance is on an upcoming agenda, use meeting-prep for the full briefing
 - `policy-research` — for deeper research into the policy area the ordinance addresses

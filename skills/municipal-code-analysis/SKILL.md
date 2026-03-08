@@ -137,7 +137,7 @@ Code sections rarely stand alone. Always check for:
 
 ### MunicipalMCP Tool Reference
 
-The `~~municipal-code` connection provides access to municipal codes via the Municode digital library. Use values from `municipal.local.md` for `municipality_name` and `state_abbr` in all tool calls.
+The `municipal-code` connection provides access to municipal codes via the Municode digital library. Use values from `municipal.local.md` for `municipality_name` and `state_abbr` in all tool calls.
 
 | Tool | Purpose | Key Parameters |
 |------|---------|---------------|
@@ -187,15 +187,15 @@ The `~~municipal-code` connection provides access to municipal codes via the Mun
 
 ### When Tools Are Unavailable
 
-When the `~~municipal-code` connection is not available:
+When the `municipal-code` connection is not available:
 - Note the gap explicitly in your analysis
 - Work from uploaded code documents, screenshots, or user-provided section text
 - Suggest the user verify current code provisions via their municipality's code website
 - Cite section numbers based on available information and flag them for verification
 
 **Planned connectors** (not yet available — plugin works without these):
-- `~~agenda-management` — legislation history
-- `~~document-management` — staff reports and supporting materials
+- `agenda-management` — legislation history
+- `document-management` — staff reports and supporting materials
 
 ## Municipal Configuration
 

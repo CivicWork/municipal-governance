@@ -88,9 +88,9 @@ Structure research across these dimensions:
 ### 4. Conduct Research
 
 **Internal Sources** (when connected):
-- `~~municipal-code`: Current code provisions
-- `~~document-management`: Prior staff reports, studies
-- `~~agenda-management`: Historical council actions
+- `municipal-code`: Current code provisions
+- `document-management`: Prior staff reports, studies
+- `agenda-management`: Historical council actions
 
 **External Sources** (via web search):
 - State municipal league resources
@@ -339,7 +339,7 @@ When in doubt, default to **Decision-focused** — it serves the most common use
 - Suggest follow-up research when warranted
 - Include contact information for peer communities when possible
 
-## Related Commands
+## Related Skills
 
 - `analyze-ordinance` — if the research leads to a specific ordinance proposal
 - `intergovernmental-scan` — for state/federal context on the policy area

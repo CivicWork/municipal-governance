@@ -11,9 +11,7 @@ plugin-name/
 ├── .claude-plugin/
 │   └── plugin.json          # Required: Plugin manifest (name, version, description, author)
 ├── .mcp.json                # Optional: MCP server configuration for external tools
-├── commands/                # Slash commands users invoke explicitly
-│   └── command-name.md      # Each .md file = one slash command
-├── skills/                  # Domain knowledge Claude draws on automatically
+├── skills/                  # Workflow skills + domain knowledge (all SKILL.md format)
 │   └── skill-name/
 │       └── SKILL.md         # Required for each skill
 ├── hooks/                   # Optional: Event handlers
@@ -26,7 +24,7 @@ plugin-name/
 - **Skills** fire automatically when Claude detects relevance (passive domain knowledge)
 - **Commands** are explicit actions the user triggers with `/plugin-name:command-name`
 - **Connectors** use MCP servers to wire into external tools
-- Skills use `~~category` placeholders instead of specific tool names (tool-agnostic)
+- Skills use category-name placeholders instead of specific tool names (tool-agnostic)
 - Plugins gracefully degrade when tools are unavailable
 
 ---
@@ -43,7 +41,7 @@ The legal plugin is the closest analog to municipal-governance. Key patterns we 
 | Skill activation | Description field triggers automatic loading | Same — YAML frontmatter `description` field |
 | Cross-skill references | Skills reference related skills | Skills reference related skills by name |
 
-**The `~~category` pattern:** The `~~` prefix signals a tool *category* placeholder. Skills reference `~~municipal-code` rather than "Municode" specifically, so a city using American Legal or their own codification can swap the MCP server config without touching any skill files.
+**The `category` pattern:** Skills reference `municipal-code` rather than "Municode" specifically, so a city using American Legal or their own codification can swap the MCP server config without touching any skill files.
 
 ---
 
@@ -52,21 +50,22 @@ The legal plugin is the closest analog to municipal-governance. Key patterns we 
 ```
 municipal-governance/             (CivicWorkPlugin/)
 ├── .claude-plugin/
-│   └── plugin.json               # v0.2.0, author: CivicWork
-├── .mcp.json                     # ~~municipal-code → MunicipalMCP (local install)
+│   └── plugin.json               # v0.3.0, author: CivicWork
+├── .mcp.json                     # municipal-code → MunicipalMCP (local install)
 ├── agents/
 │   └── setup-municipality.md     # Interactive municipal.local.md configuration wizard
 ├── .claude/
 │   └── settings.local.json       # Project-level Claude Code settings
-├── commands/
-│   ├── analyze-ordinance.md      # /municipal-governance:analyze-ordinance
-│   ├── meeting-prep.md           # /municipal-governance:meeting-prep
-│   ├── policy-research.md        # /municipal-governance:policy-research
-│   ├── agenda-synthesis.md       # /municipal-governance:agenda-synthesis
-│   ├── constituent-response.md   # /municipal-governance:constituent-response
-│   ├── budget-review.md          # /municipal-governance:budget-review
-│   └── intergovernmental-scan.md # /municipal-governance:intergovernmental-scan
 ├── skills/
+│   ├── # Workflow Skills (7) — user-facing workflows
+│   ├── analyze-ordinance/SKILL.md       # /municipal-governance:analyze-ordinance
+│   ├── meeting-prep/SKILL.md            # /municipal-governance:meeting-prep
+│   ├── policy-research/SKILL.md         # /municipal-governance:policy-research
+│   ├── agenda-synthesis/SKILL.md        # /municipal-governance:agenda-synthesis
+│   ├── constituent-response/SKILL.md    # /municipal-governance:constituent-response
+│   ├── budget-review/SKILL.md           # /municipal-governance:budget-review
+│   ├── intergovernmental-scan/SKILL.md  # /municipal-governance:intergovernmental-scan
+│   ├── # Domain Skills (9) — knowledge modules
 │   ├── municipal-code-analysis/SKILL.md   # Code interpretation, cross-referencing, MunicipalMCP tool reference
 │   ├── parliamentary-procedure/SKILL.md   # Robert's Rules, motions, voting, scripted chair language
 │   ├── land-use-zoning/SKILL.md           # Zoning, variances, TIF, development review
@@ -109,7 +108,7 @@ Only one connector is actively configured:
 ```json
 {
   "mcpServers": {
-    "~~municipal-code": {
+    "municipal-code": {
       "command": "/path/to/MunicipalMCP/.venv/bin/python3",
       "args": ["/path/to/MunicipalMCP/municode-mcp-server.py"]
     }
@@ -119,7 +118,7 @@ Only one connector is actively configured:
 
 **Important:** The `.mcp.json` path is machine-specific and must be updated per-installation. The current file points to the developer's local MunicipalMCP install.
 
-### MunicipalMCP Tools (7 tools via `~~municipal-code`)
+### MunicipalMCP Tools (7 tools via `municipal-code`)
 
 The `municipal-code-analysis` skill contains the authoritative tool reference. Summary:
 
@@ -135,7 +134,7 @@ The `municipal-code-analysis` skill contains the authoritative tool reference. S
 
 **Common workflows:** Search-then-read (`search_municipal_codes` → `get_code_section`), browse-then-read (`get_code_structure` → drill down → `get_code_section`), validation (`get_municipality_info` to confirm availability).
 
-**Tool guidance in skills:** 6 of 9 skills reference `~~municipal-code` with domain-specific search patterns. The 3 that don't need it: `policy-evaluation`, `council-communication`, `parliamentary-procedure`. All 6 point back to `municipal-code-analysis` for the full tool reference.
+**Tool guidance in skills:** 6 of 9 skills reference `municipal-code` with domain-specific search patterns. The 3 that don't need it: `policy-evaluation`, `council-communication`, `parliamentary-procedure`. All 6 point back to `municipal-code-analysis` for the full tool reference.
 
 ### Planned Connectors
 
@@ -143,10 +142,10 @@ These categories are referenced in skills as "Planned connectors" but have no MC
 
 | Category | Purpose | Candidate Implementations |
 |----------|---------|--------------------------|
-| `~~document-management` | Agenda packets, staff reports, FOIA records | `@anthropic/mcp-server-filesystem`, Box MCP, SharePoint MCP |
-| `~~agenda-management` | Legislation tracking, meeting schedules | Would need custom MCP for Legistar/Granicus/CivicEngage APIs |
-| `~~communication` | Team messaging | `@anthropic/mcp-server-slack`, Teams MCP |
-| `~~project-tracking` | Action items, task tracking | `@anthropic/mcp-server-linear`, Jira MCP |
+| `document-management` | Agenda packets, staff reports, FOIA records | `@anthropic/mcp-server-filesystem`, Box MCP, SharePoint MCP |
+| `agenda-management` | Legislation tracking, meeting schedules | Would need custom MCP for Legistar/Granicus/CivicEngage APIs |
+| `communication` | Team messaging | `@anthropic/mcp-server-slack`, Teams MCP |
+| `project-tracking` | Action items, task tracking | `@anthropic/mcp-server-linear`, Jira MCP |
 
 ### Known Pitfall: MCP Entry Propagation
 
@@ -183,7 +182,7 @@ Each SKILL.md follows this pattern:
 6. Output template (for skills producing formal analyses: policy-evaluation, public-finance, municipal-code-analysis)
 7. Quality standards and common pitfalls
 8. `## Related Skills` — cross-references to 2-4 related skills (standardized header across all 9 skills)
-9. `## Using Connected Tools` — active `~~municipal-code` search patterns (6 skills) + planned connectors
+9. `## Using Connected Tools` — active `municipal-code` search patterns (6 skills) + planned connectors
 10. `## Municipal Configuration` — what to look for in `municipal.local.md`
 11. Caveats and limitations
 
@@ -202,15 +201,16 @@ Each command .md follows this pattern:
 
 ## Adding to the Plugin
 
-### Adding a New Command
+### Adding a New Workflow Skill
 
-1. Create `commands/your-command-name.md`
-2. Follow the command structure above
-3. Start workflow with "Load Municipal Context" step (load `municipal.local.md`)
-4. Reference specific skills by name in a `## Skills Referenced` section
+1. Create `skills/your-skill-name/SKILL.md` with YAML frontmatter (`description` field)
+2. Start with a **Scoping step** — brief questions to focus the analysis
+3. Include a "Load Municipal Context" step (load `municipal.local.md`)
+4. Reference specific domain skills by name in a `## Skills Referenced` section
 5. Include graceful degradation notes for when MCP tools are unavailable
-6. Add three-tier classification where applicable
-7. Update README.md command table
+6. Add three-tier attention indicators where applicable
+7. Add `## Related Skills` pointing to complementary workflow skills
+8. Update README.md skill table
 
 ### Adding a New Skill
 
@@ -251,5 +251,5 @@ Each skill provides domain expertise. Beyond the base frameworks, skills include
 | Audience | Elected officials + staff | Skills useful for both; commands optimized for elected officials |
 | State specificity | Generic with state-configurable | `municipal.local.md` holds state-specific details; skills provide general frameworks |
 | Architecture | Commands → Skills (two-tier) | Agents were evaluated and removed — content merged into skills for simplicity |
-| MCP approach | `~~category` placeholders | Tool-agnostic; any city can swap providers without touching skills |
+| MCP approach | Category-name placeholders | Tool-agnostic; any city can swap providers without touching skills |
 | `plugin.json` author | `{"name": "CivicWork"}` object | Must be object format — plain string crashes Claude Desktop Plugins page |

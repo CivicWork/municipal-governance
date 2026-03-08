@@ -224,7 +224,7 @@ When user specifies particular items:
 - Note any parsing uncertainties
 - Handle varying packet formats gracefully
 
-## Related Commands
+## Related Skills
 
 - `meeting-prep` — for a comprehensive deep-dive briefing (use agenda-synthesis for quick turnaround, meeting-prep for thorough preparation)
 - `analyze-ordinance` — for detailed analysis of any ordinance item flagged in the synthesis
