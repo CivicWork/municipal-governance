@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Claude AI plugin** (`municipal-governance`, v0.2.0) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
+This is a **Claude AI plugin** (`municipal-governance`, v0.2.1) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
 
 It provides automated workflows for ordinance analysis, meeting preparation, policy research, budget review, constituent communications, agenda synthesis, and intergovernmental scanning.
 
@@ -17,7 +17,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 ├── agents/             # 1 utility agent (setup-municipality)
 ├── commands/           # 7 slash command workflow definitions
 ├── skills/             # 9 domain expertise modules with SKILL.md files
-├── .claude-plugin/     # Plugin metadata (plugin.json v0.2.0)
+├── .claude-plugin/     # Plugin metadata (plugin.json v0.2.1)
 ├── .mcp.json           # MCP server connections (~~municipal-code active)
 ├── municipal.local.md  # Municipality-specific configuration (template — customize per deployment)
 ├── README.md           # User documentation with installation + quick start
