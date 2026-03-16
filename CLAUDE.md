@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Claude AI plugin** (`municipal-governance`, v0.3.0) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
+This is a **Claude AI plugin** (`municipal-governance`, v0.4.0) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
 
-It provides automated workflows for ordinance analysis, meeting preparation, policy research, budget review, constituent communications, agenda synthesis, and intergovernmental scanning.
+It provides automated workflows for ordinance analysis, meeting preparation, policy research, budget review, constituent communications, agenda synthesis, intergovernmental scanning, and vendor evaluation.
 
 **Key characteristic**: This is a prompt/workflow-based plugin using Markdown and JSON configuration — not compiled code. There are no build steps, tests, or linting tools.
 
@@ -15,8 +15,8 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 ```
 .
 ├── agents/             # 1 utility agent (setup-municipality)
-├── skills/             # 16 skills: 7 workflow commands + 9 domain expertise modules
-├── .claude-plugin/     # Plugin metadata (plugin.json v0.3.0)
+├── skills/             # 18 skills: 8 workflow commands + 10 domain expertise modules
+├── .claude-plugin/     # Plugin metadata (plugin.json v0.4.0)
 ├── .mcp.json           # MCP server connections (municipal-code active)
 ├── municipal.local.md  # Municipality-specific configuration (template — customize per deployment)
 ├── README.md           # User documentation with installation + quick start
@@ -30,7 +30,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 
 **Skills** (`/skills/*/SKILL.md`) form two tiers of domain expertise, all in the same directory format:
 
-1. **Workflow Skills** (7): User-facing workflows invoked via `/municipal-governance:*`. Each workflow skill:
+1. **Workflow Skills** (8): User-facing workflows invoked via `/municipal-governance:*`. Each workflow skill:
    - **Scopes the work first** — brief questions to focus depth and identify what the user actually needs (see "Scope" step)
    - Loads `municipal.local.md` configuration
    - References specific domain skills via `## Skills Referenced` section
@@ -39,7 +39,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
    - Lists `## Related Skills` for discoverability
    - Includes "omit if N/A" guidance on longer output templates
 
-2. **Domain Skills** (9): Knowledge modules that workflow skills draw on, containing:
+2. **Domain Skills** (10): Knowledge modules that workflow skills draw on, containing:
    - YAML frontmatter with `description` (triggers automatic activation)
    - Frameworks, methodologies, analysis techniques
    - `## Related Skills` cross-references to other skills
@@ -47,7 +47,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
    - `## Municipal Configuration` listing relevant `municipal.local.md` fields
    - Three domain skills include structured output templates: `policy-evaluation`, `public-finance`, `municipal-code-analysis`
 
-### Workflow Skills (7)
+### Workflow Skills (8)
 
 | Skill | Purpose |
 |-------|---------|
@@ -58,8 +58,9 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 | `constituent-response` | Draft constituent communications |
 | `budget-review` | Fiscal impact and budget analysis |
 | `intergovernmental-scan` | State/federal policy monitoring |
+| `vendor-evaluate` | Analyze vendor contracts and assess alternatives |
 
-### Domain Skills (9)
+### Domain Skills (10)
 
 | Skill | Purpose |
 |-------|---------|
@@ -72,6 +73,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 | `open-meetings-foia` | OMA compliance, FOIA, virtual meetings, records retention, social media |
 | `council-communication` | Staff reports, ordinances, resolutions, minutes, amendment conventions |
 | `ethics-conflicts` | Conflict of interest, recusal, gift restrictions, financial disclosure |
+| `vendor-assessment` | Vendor lock-in, build-vs-buy, technical decomposition, procurement |
 
 ### Data Flow
 

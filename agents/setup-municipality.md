@@ -49,6 +49,7 @@ Once you have the name and state, **attempt to auto-discover as much as possible
 > Does this look right? I'll fill these in and then ask you about the things I couldn't find."
 
 **Then ask conversationally about anything you couldn't auto-discover.** Group naturally and move on as the user answers. Common things you'll still need to ask:
+- Are you staff or elected
 - Term length and staggering
 - Regular meeting schedule (day, time, frequency)
 - Meeting location
@@ -80,7 +81,7 @@ If not already discovered in Step 2, ask about:
 **Fiscal thresholds** (these drive the red/yellow/green flags in plugin output):
 - What dollar amount would you consider a critical fiscal impact? (suggested: $500K+ for mid-size cities)
 - What dollar amount is a significant fiscal impact? (suggested: $100K+)
-- At what amount does a contract require council approval?
+- At what amount does a contract require council approval? Often known as a Discretionary Spending limit. 
 - At what amount does a budget line-item transfer require council approval?
 
 ### Step 5: Legal Framework
@@ -90,7 +91,7 @@ If not already discovered in Step 2, ask about:
 - What is the state's FOIA/public records statute reference?
 - State ethics statute reference?
 
-**Local rules** (these require user knowledge — always ask):
+**Local rules** (these may require user knowledge if you couldn't find with MunicipalMCP — always ask if you couldn't find the answer):
 - Is there a local ethics ordinance? (code section reference)
 - Gift ban threshold?
 - Financial disclosure filing deadline?

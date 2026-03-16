@@ -13,6 +13,7 @@ This plugin automates common workflows for municipal elected officials and staff
 - **Constituent Communications**: Draft responses following municipal communication standards
 - **Agenda Synthesis**: Quick-turnaround agenda packet summaries
 - **Intergovernmental Scanning**: Monitor state/federal policy impacts on local government
+- **Vendor Evaluation**: Analyze vendor contracts, decompose deliverables, assess lock-in, and produce build feasibility specs
 
 ## Quick Start
 
@@ -52,6 +53,7 @@ That's it — most commands work immediately with just an uploaded document and 
 | `/municipal-governance:constituent-response` | Draft constituent communications |
 | `/municipal-governance:budget-review` | Analyze budget items and fiscal impact |
 | `/municipal-governance:intergovernmental-scan` | Scan state/federal policy impacts |
+| `/municipal-governance:vendor-evaluate` | Evaluate vendor contracts, assess lock-in, and spec open-source alternatives |
 
 ## Configuration
 
@@ -70,7 +72,7 @@ The plugin works for **any US municipality** — `municipal.local.md` is where y
 
 ## Skills
 
-The plugin includes 9 domain expertise modules. You don't invoke these directly — Claude activates them automatically based on what you're working on.
+The plugin includes 10 domain expertise modules. You don't invoke these directly — Claude activates them automatically based on what you're working on.
 
 | Skill | What it covers | Example prompt |
 |-------|---------------|----------------|
@@ -83,6 +85,7 @@ The plugin includes 9 domain expertise modules. You don't invoke these directly 
 | `open-meetings-foia` | OMA, FOIA exemption decision tree, closed session framework, response templates | "Can we discuss this in executive session?" |
 | `council-communication` | Staff reports, ordinances vs resolutions, legal drafting, constituent triage | "Should this be an ordinance or a resolution?" |
 | `ethics-conflicts` | Conflicts of interest, recusal procedures, gift rules, financial disclosure | "Do I need to recuse myself from this vote?" |
+| `vendor-assessment` | Vendor lock-in, build-vs-buy, technical decomposition, procurement analysis | "Should we renew this contract or build our own?" |
 
 ## Connectors
 
@@ -92,7 +95,7 @@ The plugin can optionally connect to external data sources via MCP servers. Curr
 |-----------|-------------|----------|
 | `municipal-code` | Search and retrieve municipal code sections (7 tools) | [MunicipalMCP](https://github.com/Skatterbrainz/MunicipalMCP) (Municode API) |
 
-Six of the nine skills include domain-specific search patterns for `municipal-code` (e.g., zoning queries, ethics ordinance lookups, budget code references). Without connectors, commands work with uploaded documents and web search.
+Seven of the ten skills include domain-specific search patterns for `municipal-code` (e.g., zoning queries, ethics ordinance lookups, budget code references). Without connectors, commands work with uploaded documents and web search.
 
 ## How It Works
 

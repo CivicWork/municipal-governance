@@ -50,14 +50,14 @@ The legal plugin is the closest analog to municipal-governance. Key patterns we 
 ```
 municipal-governance/             (CivicWorkPlugin/)
 ├── .claude-plugin/
-│   └── plugin.json               # v0.3.0, author: CivicWork
+│   └── plugin.json               # v0.4.0, author: CivicWork
 ├── .mcp.json                     # municipal-code → MunicipalMCP (local install)
 ├── agents/
 │   └── setup-municipality.md     # Interactive municipal.local.md configuration wizard
 ├── .claude/
 │   └── settings.local.json       # Project-level Claude Code settings
 ├── skills/
-│   ├── # Workflow Skills (7) — user-facing workflows
+│   ├── # Workflow Skills (8) — user-facing workflows
 │   ├── analyze-ordinance/SKILL.md       # /municipal-governance:analyze-ordinance
 │   ├── meeting-prep/SKILL.md            # /municipal-governance:meeting-prep
 │   ├── policy-research/SKILL.md         # /municipal-governance:policy-research
@@ -65,7 +65,8 @@ municipal-governance/             (CivicWorkPlugin/)
 │   ├── constituent-response/SKILL.md    # /municipal-governance:constituent-response
 │   ├── budget-review/SKILL.md           # /municipal-governance:budget-review
 │   ├── intergovernmental-scan/SKILL.md  # /municipal-governance:intergovernmental-scan
-│   ├── # Domain Skills (9) — knowledge modules
+│   ├── vendor-evaluate/SKILL.md         # /municipal-governance:vendor-evaluate
+│   ├── # Domain Skills (10) — knowledge modules
 │   ├── municipal-code-analysis/SKILL.md   # Code interpretation, cross-referencing, MunicipalMCP tool reference
 │   ├── parliamentary-procedure/SKILL.md   # Robert's Rules, motions, voting, scripted chair language
 │   ├── land-use-zoning/SKILL.md           # Zoning, variances, TIF, development review
@@ -74,7 +75,8 @@ municipal-governance/             (CivicWorkPlugin/)
 │   ├── policy-evaluation/SKILL.md         # Bardach framework, logic models, stakeholder analysis
 │   ├── open-meetings-foia/SKILL.md        # OMA compliance, FOIA procedures, exemption decision tree
 │   ├── council-communication/SKILL.md     # Staff reports, ordinances, resolutions, legal drafting
-│   └── ethics-conflicts/SKILL.md          # Conflict of interest, recusal, gift bans
+│   ├── ethics-conflicts/SKILL.md          # Conflict of interest, recusal, gift bans
+│   └── vendor-assessment/SKILL.md        # Vendor lock-in, build-vs-buy, decomposition, procurement
 ├── municipal.local.md            # Municipality-specific configuration (template)
 ├── CLAUDE.md                     # Claude Code developer guidance
 ├── README.md                     # User documentation
@@ -96,6 +98,7 @@ Each command draws on specific skills. This mapping documents the intended relat
 | `constituent-response` | council-communication | open-meetings-foia |
 | `budget-review` | public-finance | policy-evaluation, municipal-code-analysis |
 | `intergovernmental-scan` | intergovernmental-relations | policy-evaluation, public-finance |
+| `vendor-evaluate` | vendor-assessment | public-finance, policy-evaluation, municipal-code-analysis, open-meetings-foia |
 
 ---
 
@@ -134,7 +137,7 @@ The `municipal-code-analysis` skill contains the authoritative tool reference. S
 
 **Common workflows:** Search-then-read (`search_municipal_codes` → `get_code_section`), browse-then-read (`get_code_structure` → drill down → `get_code_section`), validation (`get_municipality_info` to confirm availability).
 
-**Tool guidance in skills:** 6 of 9 skills reference `municipal-code` with domain-specific search patterns. The 3 that don't need it: `policy-evaluation`, `council-communication`, `parliamentary-procedure`. All 6 point back to `municipal-code-analysis` for the full tool reference.
+**Tool guidance in skills:** 7 of 10 skills reference `municipal-code` with domain-specific search patterns. The 3 that don't need it: `policy-evaluation`, `council-communication`, `parliamentary-procedure`. All 7 point back to `municipal-code-analysis` for the full tool reference.
 
 ### Planned Connectors
 
@@ -181,7 +184,7 @@ Each SKILL.md follows this pattern:
 5. Decision frameworks, templates, and practitioner tools (decision trees, scoring rubrics, scripted language, checklists)
 6. Output template (for skills producing formal analyses: policy-evaluation, public-finance, municipal-code-analysis)
 7. Quality standards and common pitfalls
-8. `## Related Skills` — cross-references to 2-4 related skills (standardized header across all 9 skills)
+8. `## Related Skills` — cross-references to 2-4 related skills (standardized header across all 10 skills)
 9. `## Using Connected Tools` — active `municipal-code` search patterns (6 skills) + planned connectors
 10. `## Municipal Configuration` — what to look for in `municipal.local.md`
 11. Caveats and limitations
@@ -239,6 +242,7 @@ Each skill provides domain expertise. Beyond the base frameworks, skills include
 | `open-meetings-foia` | FOIA exemption 4-step decision tree + exemption comparison table, closed session exception framework with motion language, 5 FOIA response templates |
 | `council-communication` | Ordinance vs resolution decision framework, shall/may/must drafting guide + common errors table, 3-tier constituent triage protocol |
 | `ethics-conflicts` | Conflict evaluation framework, recusal procedure, gift restriction analysis, ethics-targeted search patterns |
+| `vendor-assessment` | Technical decomposition framework (4 categories), lock-in evaluation (5 dimensions), build-vs-buy decision framework, AI-specific assessment criteria, contract term red flags table, pre-built decomposition patterns (chatbot, FOIA, agenda management) |
 
 ---
 
@@ -253,3 +257,5 @@ Each skill provides domain expertise. Beyond the base frameworks, skills include
 | Architecture | Commands → Skills (two-tier) | Agents were evaluated and removed — content merged into skills for simplicity |
 | MCP approach | Category-name placeholders | Tool-agnostic; any city can swap providers without touching skills |
 | `plugin.json` author | `{"name": "CivicWork"}` object | Must be object format — plain string crashes Claude Desktop Plugins page |
+| Governance framework overlay | Opt-in only | Frameworks are valuable but embedding them as default scoring would impose CivicWork's perspective without user consent |
+| Build feasibility output | Spec only, no code | Plugin recommends — humans decide; keeps the tool in advisory lane |
