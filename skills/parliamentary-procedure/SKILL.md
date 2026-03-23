@@ -10,7 +10,7 @@ description: >
 
 ## Overview
 
-Most municipal governing bodies operate under Robert's Rules of Order (or a simplified version), supplemented by their own rules of procedure. Understanding parliamentary procedure is essential for effective meeting participation and orderly deliberation.
+Most municipal governing bodies operate under Robert's Rules of Order Newly Revised (RONR), **12th Edition** (September 2020), or a simplified version, supplemented by their own rules of procedure. Organizations whose bylaws prescribe "Robert's Rules of Order" without specifying an edition have automatically adopted the 12th edition.
 
 ## Hierarchy of Procedural Authority
 
@@ -20,7 +20,22 @@ Most municipal governing bodies operate under Robert's Rules of Order (or a simp
 4. **Robert's Rules of Order** (as default/fallback)
 5. **Custom and Practice** (how things have been done)
 
+**Important**: In states with open meetings laws (all 50 states), the **state open meetings act is the controlling legal framework** for council meeting procedures — not Robert's Rules. RONR is supplemental: it governs areas where state law is silent (motion procedures, debate management, voting methods). When RONR and state law conflict, state law prevails. See the state reference in `state-references/` for applicable open meetings requirements.
+
 Always check `municipal.local.md` for the specific procedural rules adopted by your governing body.
+
+## Small Board Rules (RONR 12th Ed., §49)
+
+Most city councils have 5-9 members, qualifying as "small boards" under RONR (~12 members or fewer). Small board rules are **fundamentally different** from the large-assembly procedures that make up the bulk of RONR:
+
+- Members may **speak without formal recognition** from the chair
+- Motions **need not be seconded**
+- **No limit on speaking frequency** — members may speak multiple times on a question
+- **Informal discussion** is permitted without a pending motion
+- The **chair may participate** in discussion and **vote on all questions**
+- Motions to close or limit debate (Previous Question, etc.) are **generally not used**
+
+If the council has adopted RONR and has ~12 or fewer members, small board rules apply by default unless the body has adopted more formal procedures by rule. Most municipal councils operate under these relaxed procedures in practice, even if they don't realize the formal basis for doing so.
 
 ## Basic Meeting Structure
 
@@ -146,7 +161,7 @@ For detailed guidance on evaluating whether a conflict exists and the applicable
 - Time limits may apply
 
 ### Closing Debate
-- **Previous question motion**: Requires 2/3 vote, immediately ends debate
+- **Previous question motion**: Requires a formal motion, a second (except in small boards), and a **2/3 vote** — only then does debate end. See "Common Misconceptions" below.
 - **Time limit**: Chair may impose or body may vote to limit
 - **Unanimous consent**: "If there is no objection, we will close debate"
 
@@ -164,9 +179,7 @@ For detailed guidance on evaluating whether a conflict exists and the applicable
 - If substitute passes, original motion is replaced
 
 ### Friendly Amendments
-- Informal modification accepted by the maker
-- Technically requires unanimous consent
-- Practice varies by body
+Under RONR, once a motion is stated by the chair, it **belongs to the entire body** — not to the maker. The maker's willingness to "accept" a "friendly amendment" is irrelevant; the amendment must be voted on (or adopted by unanimous consent in small boards). The common practice of the chair asking the maker to accept is technically incorrect, though widely practiced.
 
 ## Common Procedural Situations
 
@@ -371,6 +384,31 @@ Check `municipal.local.md` for:
 - Supermajority triggers
 - Public comment procedures
 - Executive session procedures
+
+## Common Misconceptions
+
+### "Calling the Question"
+The most widespread parliamentary myth. Members commonly believe that saying "I call the question" forces an immediate vote. In fact, "Previous Question" (the formal name) requires:
+1. A **motion** ("I move the previous question")
+2. A **second** (except in small boards where seconds aren't required)
+3. An **immediate vote** on whether to end debate — requiring a **two-thirds supermajority**
+4. Only if that vote passes does the body then vote on the underlying motion
+
+A single member cannot unilaterally end debate.
+
+### "Tabling" vs. "Postponing"
+These are different motions with different effects:
+- **Lay on the Table**: Temporarily sets aside a matter for urgent business. No debate. Requires majority vote. The matter can be taken from the table later but has no automatic return date.
+- **Postpone to a Certain Time**: Delays consideration to a specific time or meeting. Debatable. The matter automatically comes up at the designated time.
+
+Most council members who say "table it" actually mean "postpone it." Using the wrong motion can have unintended consequences.
+
+## Simplified Alternatives
+
+For councils finding full RONR overly formal, consider alternatives designed for small legislative bodies:
+- **UNC School of Government**: *Suggested Rules of Procedure for a City Council* (4th ed. 2017) — eliminates much RONR complexity while maintaining core principles
+- **Ann MacFarlane**: *Mastering Council Meetings* — written specifically for local government
+- **Note**: The Illinois Municipal Code does not mandate a specific parliamentary procedure manual. Most municipalities adopt RONR by reference in their municipal code or council rules, but simplified alternatives are equally valid.
 
 ## Related Skills
 

@@ -217,6 +217,7 @@ When user specifies particular items:
 
 ## Notes
 
+- For deeper analysis of flagged items, apply the Standard Deliberation Question Framework from the `meeting-prep` skill (fiscal impact, legal/compliance, policy alignment, community impact, alternatives, timeline, risk)
 - Prioritize speed for standard synthesis
 - Escalate to meeting-prep for comprehensive needs
 - Always provide page references

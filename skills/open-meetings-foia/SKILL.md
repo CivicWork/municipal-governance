@@ -8,6 +8,14 @@ description: >
 
 # Open Meetings and FOIA
 
+## State-Specific Requirements
+
+This skill provides general frameworks for open meetings and public records compliance. For jurisdiction-specific statutes, deadlines, thresholds, and penalties, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**The state reference is mandatory for compliance guidance.** Open meetings and FOIA requirements vary dramatically by state — deadlines, notice periods, closed session exceptions, penalty structures, and recording requirements are all state-specific. Generic guidance without state-specific statutory backing is insufficient for compliance purposes.
+
+**This is the highest-liability skill in the plugin.** Errors in compliance guidance can expose officials to criminal misdemeanor liability and civil penalties. Always verify against the state reference document and recommend attorney review for compliance decisions.
+
 ## Overview
 
 Transparency is fundamental to democratic governance. Open Meetings Acts and Freedom of Information Acts ensure public access to government deliberations and records. Violations can result in voided actions, penalties, and erosion of public trust.
@@ -105,12 +113,12 @@ Generally, a "meeting" occurs when:
 4. Minutes kept (may be sealed)
 5. Return to open session
 6. Report any action taken
-7. No final action in closed session (usually)
+7. No final action in closed session — verify in state reference; this is an absolute prohibition in many states (e.g., Illinois 5 ILCS 120 §2(e))
 
 ### Closed Session Minutes
 - Required in most states
 - May be kept confidential
-- Periodic review for release
+- Periodic review for release — frequency specified in state reference (e.g., Illinois requires semi-annual review per §2.07(c)); this is mandatory, not optional
 - Subject to court review
 
 ## Freedom of Information Act (FOIA)
@@ -230,7 +238,7 @@ Generally includes:
 Open meetings and public records laws vary by state. Check `municipal.local.md` for your state's specific statute references. Key variables that differ by state:
 
 **Open Meetings:**
-- Notice period requirements (24-72 hours is typical; check your state)
+- Notice period requirements — see state reference for exact statutory deadlines (e.g., Illinois requires 48 hours). Do not approximate; get the exact number from the state reference.
 - Whether agenda must be posted with notice
 - Recording requirements (audio, video, or none)
 - Closed session record-keeping requirements (verbatim vs. summary)

@@ -75,6 +75,7 @@ Create a quick-reference summary:
 - Identify items on consent
 - Flag any that may warrant removal for separate discussion
 - Note any with fiscal impact above threshold
+- **Best practices**: Publish at least one week in advance; any member may pull an item for separate discussion without a second or vote; typical items include minutes approval, routine contracts, and bill payments. Properly managed consent agendas save 30+ minutes per meeting.
 
 **Public Hearings**
 - Required notice verification
@@ -237,9 +238,14 @@ Produce comprehensive briefing document.
 **Code Impact** *(if applicable)*:
 - [Current code provision and proposed change] *(Confidence: [High/Medium/Low] — [source])*
 
-**Questions to Consider**:
-1. [Question 1]
-2. [Question 2]
+**Questions to Consider** (apply the Standard Deliberation Framework):
+1. **Fiscal impact**: What does this cost? One-time vs. recurring? Fund balance impact?
+2. **Legal/compliance**: Does the municipality have authority? State law constraints? Liability?
+3. **Policy alignment**: Consistent with strategic plan? Conflicts with existing policy?
+4. **Community impact**: Who benefits? Who is burdened? Geographic/demographic distribution?
+5. **Alternatives**: What other options were evaluated? Why this recommendation?
+6. **Timeline**: When does this take effect? Staff capacity to implement?
+7. **Risk**: What could go wrong? Reversibility? Political/legal/financial risk?
 
 **Background**: [Brief context]
 
@@ -311,6 +317,8 @@ When in doubt, default to **Standard** and let the user escalate specific items.
 
 ## Notes
 
+- **Preparation benchmark**: Plan for approximately 1-2 hours of preparation per hour of meeting for routine agendas; 3-5+ hours for complex packets. Focus preparation time on identifying the 2-3 most consequential items.
+- **Advance staff contact**: Contact staff before the meeting to resolve factual ambiguities and get answers to technical questions. This prevents surprises during the meeting and is standard practice recommended by ICMA ("no surprise" rule — the city manager should brief the mayor/chair about the agenda before every meeting).
 - Match depth to the mode selected in scoping — don't produce comprehensive output when the user asked for a focused briefing
 - For consent agenda items, brief descriptions are always sufficient unless user specifically asks to pull one
 - When agenda management tools are not connected, work from uploaded documents

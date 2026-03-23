@@ -54,7 +54,7 @@ Flag any potential conflicts, gaps, or inconsistencies.
 
 Analyze the ordinance across these dimensions:
 
-**Legal Authority**
+**Legal Authority** — For non-home-rule municipalities, this is the **threshold question** and the most common source of legal vulnerability. Every proposed ordinance must have identifiable statutory authority. See the state reference in `state-references/` for specific enabling legislation and enumerated powers.
 - Does the municipality have authority to enact this?
 - Home rule powers analysis (if applicable)
 - State preemption check
@@ -227,6 +227,9 @@ Complex legal questions should be referred to the municipal attorney.*
 
 ## Notes
 
+- **Common ordinance drafting errors to flag**: Vague or ambiguous language; inconsistent terminology across sections; borrowing from other jurisdictions without adapting to local state law; missing enforcement or penalty provisions; failure to address relationship to existing code sections; using outdated model ordinances without checking for new laws.
+- **For zoning-related ordinances**: Evaluate against the court-established reasonableness test in the state reference (e.g., Illinois LaSalle/Sinclair factors). Reference the `land-use-zoning` skill for detailed zoning analysis frameworks.
+- **Model ordinance resources**: Check the state municipal league for model and sample ordinances before drafting from scratch (e.g., IML maintains categorized model ordinance and sample ordinance libraries).
 - When `municipal-code` is not available, note code sections that should be manually reviewed
 - Always include the legal disclaimer
 - Flag any items that require attorney review

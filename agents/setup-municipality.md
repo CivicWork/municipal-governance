@@ -133,6 +133,18 @@ After writing, tell the user:
 - Which sections still have placeholders they can fill in later
 - That they can run this agent again anytime to update the configuration
 
+### Step 8: Offer Project Workspace Setup
+
+After writing `municipal.local.md`, ask:
+
+> "Would you like me to set up a **Cowork Project workspace** for {municipality name}? This creates a folder on your computer where you can keep agenda packets, budget documents, and meeting notes — with persistent memory across sessions so Claude builds institutional knowledge over time.
+>
+> (This takes about 30 seconds.)"
+
+If the user says yes, run the **setup-project** agent workflow (Steps 1-5 from `agents/setup-project.md`). You already have all the information needed from the configuration you just wrote.
+
+If the user says no or skip, mention they can run the setup-project agent later from the Agents tab.
+
 ### Important Guidelines
 
 - Be conversational, not robotic. Don't ask all questions at once.

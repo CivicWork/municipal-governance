@@ -309,6 +309,10 @@ Then confirm depth:
 
 ## Peer Comparison (if available)
 
+For peer comparison data, the state reference in `state-references/` identifies state-specific data sources (e.g., Illinois Comptroller's Local Government Warehouse provides Annual Financial Report data from 9,200+ local governments). ICMA's Open Access Benchmarking offers 80 free municipal KPIs for self-service comparison.
+
+Note: GFOA's Distinguished Budget Presentation Award underwent a major overhaul for 2026 — now uses a points-based system (>100 points) evaluated on two axes (information communicated and material type), replacing the legacy four-category mandatory criteria.
+
 | Metric | [City] | Peer Avg | State Avg |
 |--------|--------|----------|-----------|
 | Per capita spending | $[X] | $[X] | $[X] |

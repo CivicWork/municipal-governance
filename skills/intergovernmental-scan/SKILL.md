@@ -313,6 +313,7 @@ Verify current status before taking action.*
 
 ## Notes
 
+- **Preemption threat monitoring**: Check the state reference in `state-references/` for the current preemption landscape, including pending threats (e.g., Illinois BUILD plan: SB 4060-4064, HB 5626 proposing sweeping preemption of local land use authority). Flag preemption bills affecting local authority as high-priority items.
 - Use web search for current legislative status
 - Cross-reference multiple sources for accuracy
 - Note effective dates prominently

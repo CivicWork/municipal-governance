@@ -93,9 +93,10 @@ Structure research across these dimensions:
 - `agenda-management`: Historical council actions
 
 **External Sources** (via web search):
-- State municipal league resources
-- National League of Cities
-- ICMA knowledge network
+- **State municipal league** (e.g., Illinois Municipal League — the primary resource for elected officials; provides model ordinances, fact sheets, legal assistance, NEO workshops, and legislative monitoring). IML is typically more relevant for elected officials than ICMA, which primarily serves appointed professional managers.
+- **National League of Cities** — research reports, *City Fiscal Conditions* annual survey (flagship benchmark data), NLC University
+- **ICMA Open Access Benchmarking** — 80 free municipal KPIs for self-service peer comparison
+- **State Comptroller/financial data** — most states maintain local government financial databases for peer comparison (e.g., Illinois Comptroller's Local Government Warehouse — 9,200+ local governments)
 - State statutes and regulations
 - Peer community ordinances
 - Academic publications

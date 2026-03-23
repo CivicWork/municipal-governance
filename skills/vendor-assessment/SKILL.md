@@ -11,6 +11,12 @@ description: >
 
 # Vendor Assessment
 
+## State-Specific Requirements
+
+For jurisdiction-specific procurement thresholds, competitive bidding requirements, and cooperative purchasing authorities, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**Key items from state reference**: Competitive bidding dollar thresholds, joint purchasing enabling statutes, cooperative purchasing programs. For small municipalities (~15,000 population), cooperative purchasing through state contracts and joint purchasing programs is typically the most cost-effective procurement strategy.
+
 ## Overview
 
 Municipalities spend significant portions of their budgets on software and technology services, often through multi-year SaaS contracts with specialized govtech vendors. These relationships can deliver real value — but they can also create dependencies that erode municipal control over public data, inflate costs over time, and limit the organization's ability to adapt to rapidly changing technology.

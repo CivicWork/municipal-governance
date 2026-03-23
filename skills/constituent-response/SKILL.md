@@ -258,6 +258,8 @@ attend council meeting / etc.].
 
 ## Notes
 
+- **Response time benchmarks**: Initial acknowledgment within **24-48 hours**; substantive response within **3-5 business days**. For part-time council members without dedicated staff, route constituent service requests through the city manager/administrator per council-manager government protocol.
+- **Available CRM tools for small municipalities**: CivicPlus (integrates with municipal websites), CivicTrack (purpose-built for elected officials), Polco (NLC partnership for community engagement). Even basic systems reduce response tracking burden for part-time officials.
 - Always match formality to the constituent's communication
 - Never be defensive or dismissive
 - Acknowledge valid frustrations even when you can't resolve them

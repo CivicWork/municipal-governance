@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Claude AI plugin** (`municipal-governance`, v0.4.0) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
+This is a **Claude AI plugin** (`municipal-governance`, v0.5.0) for local government officials and staff, designed to work for **any US municipality**. Built by Dustin Good, sitting Elgin Illinois Councilmember and creator of CivicAide, PolicyAide, and CivicWork.Ai.
 
 It provides automated workflows for ordinance analysis, meeting preparation, policy research, budget review, constituent communications, agenda synthesis, intergovernmental scanning, and vendor evaluation.
 
@@ -14,9 +14,12 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 
 ```
 .
-├── agents/             # 1 utility agent (setup-municipality)
-├── skills/             # 18 skills: 8 workflow commands + 10 domain expertise modules
-├── .claude-plugin/     # Plugin metadata (plugin.json v0.4.0)
+├── agents/             # 2 utility agents (setup-municipality, setup-project)
+├── skills/             # 20 skills: 8 workflow commands + 12 domain expertise modules
+├── state-references/   # State-specific statutory requirements (IL.md, etc.)
+├── hooks/              # Event hooks (SessionStart config check)
+├── scripts/            # Hook scripts (check-config.sh)
+├── .claude-plugin/     # Plugin metadata (plugin.json v0.5.0)
 ├── .mcp.json           # MCP server connections (municipal-code active)
 ├── municipal.local.md  # Municipality-specific configuration (template — customize per deployment)
 ├── README.md           # User documentation with installation + quick start
@@ -26,7 +29,8 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 ### Design
 
 **Agents** (`/agents/`): Utility agents that run as Claude Code subprocesses in Cowork with file editing access:
-- `setup-municipality` — Interactive configuration wizard that walks users through customizing `municipal.local.md`
+- `setup-municipality` — Interactive configuration wizard that walks users through customizing `municipal.local.md` (primarily for Claude Code CLI users; Cowork users can use the native "Customize plugin settings" instead)
+- `setup-project` — Scaffolds a Cowork Project workspace folder with the right directory structure and a project-level CLAUDE.md, enabling persistent memory across sessions
 
 **Skills** (`/skills/*/SKILL.md`) form two tiers of domain expertise, all in the same directory format:
 
@@ -60,7 +64,7 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 | `intergovernmental-scan` | State/federal policy monitoring |
 | `vendor-evaluate` | Analyze vendor contracts and assess alternatives |
 
-### Domain Skills (10)
+### Domain Skills (11)
 
 | Skill | Purpose |
 |-------|---------|
@@ -74,11 +78,12 @@ It provides automated workflows for ordinance analysis, meeting preparation, pol
 | `council-communication` | Staff reports, ordinances, resolutions, minutes, amendment conventions |
 | `ethics-conflicts` | Conflict of interest, recusal, gift restrictions, financial disclosure |
 | `vendor-assessment` | Vendor lock-in, build-vs-buy, technical decomposition, procurement |
+| `vendor-alternatives` | Municipal software alternatives knowledge base, replacement tiers, open-source landscape |
 
 ### Data Flow
 
 ```
-User command → Scope the work (brief user questions) → Load municipal.local.md → Retrieve documents (upload or MCP) → Reference skills → Structured Markdown output with confidence indicators
+User command → Scope the work (brief user questions) → Load municipal.local.md → Load state reference (state-references/{state}.md) → Retrieve documents (upload or MCP) → Reference skills → Structured Markdown output with confidence indicators
 ```
 
 ### MCP Server Connections
@@ -91,6 +96,17 @@ Defined in `.mcp.json`. **Active:**
 - `agenda-management` — legislation tracking, meeting schedules
 - `communication` — team messaging
 - `project-tracking` — action item tracking
+
+### Hooks
+
+Defined in `hooks/hooks.json`. The plugin uses event hooks for automated checks:
+
+- **SessionStart** — `scripts/check-config.sh` runs at the start of every session. Checks three things:
+  1. Does `municipal.local.md` exist? If not → prompts user to configure
+  2. Is the state field populated? If not → warns
+  3. Does a state reference exist for the configured state? If not → warns that compliance guidance will be general only
+
+The hook is silent on the happy path (configured municipality with state reference available).
 
 ## Working with This Codebase
 
@@ -179,9 +195,35 @@ The disclosure is not a liability disclaimer — it's a design principle. The pl
 - Maintain these when adding or modifying skills/commands
 - See `CivicWorkPluginReference.md` for the full command → skill mapping table
 
-### State-Specific Content
+### State-Specific Content — Two-Layer Architecture
 
-All skills are written for **any US municipality**. State-specific details belong in `municipal.local.md`, not in skill files. When referencing state-specific rules (OMA, FOIA, tax limitations, home rule), use language like "check `municipal.local.md` for your state's requirements" rather than hardcoding any state's rules.
+Skills provide **state-agnostic frameworks** (analytical workflows, professional standards, output templates). State-specific statutory requirements live in **`state-references/`**.
+
+```
+Layer 1: Skills (frameworks)     — How to analyze. Same for all states.
+Layer 2: State references        — What the law says. Unique per state.
+Layer 3: municipal.local.md      — Municipality-specific config. Unique per deployment.
+```
+
+**State reference documents** (`state-references/{STATE}.md`) contain:
+- Statutory citations with section numbers
+- Deadlines, thresholds, and penalties
+- Procedural requirements
+- Common compliance failures
+- Institutional resources (state league, comptroller, etc.)
+- Preemption landscape
+
+**When providing compliance guidance**, domain skills must:
+1. Load the state reference for the user's state (from `municipal.local.md`)
+2. Apply all statutory requirements, deadlines, and thresholds from the state reference
+3. If no state reference exists, note the limitation and recommend verification with legal counsel
+
+**Currently available**: `state-references/IL.md` (Illinois). Additional states can be contributed by following the IL.md structure as a template.
+
+**What goes where**:
+- **Statute, deadline, threshold, penalty** → state reference
+- **Framework, methodology, output template** → skill file
+- **Council structure, contacts, fiscal context** → `municipal.local.md`
 
 ## Known Pitfalls
 

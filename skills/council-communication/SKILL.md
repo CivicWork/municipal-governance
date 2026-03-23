@@ -16,7 +16,11 @@ Effective communication is essential for municipal governance. Different documen
 ## Staff Reports
 
 ### Purpose
-Staff reports provide council members with the information needed to make informed decisions. They should be comprehensive yet concise, objective yet include recommendations.
+Staff reports provide council members with the information needed to make informed decisions. They should be comprehensive yet concise, objective yet include recommendations. The standard structure follows a three-part pattern: **Background → Analysis → Recommendation**.
+
+**Optimal length**: Research (Johnson & Lyles, 2016, *Journal of the American Planning Association*) found **6-10 pages** optimal — reports of 5 pages or fewer scored poorly on completeness, while reports over 10 pages showed no improvement in quality.
+
+**Audience-appropriate communication**: GFOA advises tailoring financial communication to different stakeholders — elected officials need strategic priorities and accountability mechanisms; the public needs simplified presentations using relatable scales (cost per household, cost per person). Avoid overwhelming elected officials with line-item detail meant for management.
 
 ### Standard Format
 

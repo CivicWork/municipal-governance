@@ -9,6 +9,12 @@ description: >
 
 # Land Use and Zoning
 
+## State-Specific Requirements
+
+This skill provides general frameworks for zoning and land use analysis. For jurisdiction-specific enabling authority, procedural deadlines, legal standards, and court-established reasonableness tests, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**Critical for non-home-rule municipalities**: Zoning authority derives entirely from state enabling legislation. Non-home-rule municipalities can only exercise powers explicitly granted. The state reference identifies the specific statutory sections, enumerated powers, notice periods, decision deadlines, and appeal timelines that govern all zoning actions.
+
 ## Overview
 
 Zoning is the primary tool municipalities use to regulate land use. It divides the community into districts and specifies what uses are permitted, conditionally permitted, or prohibited in each district, along with dimensional and design standards.
@@ -23,10 +29,11 @@ Zoning is the primary tool municipalities use to regulate land use. It divides t
 - Subject to "takings" limitations (5th Amendment)
 
 ### Enabling Authority
-- States grant zoning authority to municipalities
-- Standard Zoning Enabling Act (1926) - model legislation
-- Home rule municipalities may have broader authority
-- State law may preempt certain local regulations
+- States grant zoning authority to municipalities through enabling legislation (see state reference for specific statutory sections and enumerated powers)
+- Standard Zoning Enabling Act (1926) — historical model; most states have their own enabling statutes
+- **Home rule municipalities** derive zoning authority from their state constitution (broader powers)
+- **Non-home-rule municipalities** derive authority **exclusively** from state enabling legislation (limited to enumerated powers) — see state reference for constitutional framework and population thresholds
+- State law may preempt certain local regulations — check state reference for preemption landscape
 
 ## Zoning District Types
 
@@ -107,14 +114,20 @@ Zoning is the primary tool municipalities use to regulate land use. It divides t
 ### Variance
 1. Application submitted
 2. Staff review
-3. Public notice
+3. Public notice (see state reference for required notice period, e.g., Illinois requires 15-day newspaper publication)
 4. Public hearing (typically Zoning Board of Appeals)
-5. Findings required:
+5. Findings required — applicant must demonstrate **"unnecessary hardship"** or **"practical difficulty"**:
    - Hardship (not self-created)
    - Unique circumstances
    - Not merely financial
    - Minimum variance necessary
    - Not contrary to public interest
+6. Decision deadline — see state reference (e.g., Illinois requires action within 90 days of hearing)
+7. Appeal — see state reference for appeal timeline (e.g., Illinois: 45 days under Administrative Review Law)
+
+Note: Variances involve a distinct legal test from special use permits. Special uses evaluate **compatibility** of an otherwise-permitted use at a specific location; variances evaluate whether **hardship** justifies a deviation from standards.
+
+**Court-established reasonableness tests**: Many states have court-established factors for evaluating zoning decision reasonableness (e.g., Illinois LaSalle/Sinclair factors: character of surrounding area, property value impact, public benefit, comprehensive plan consistency, gain to public vs. hardship on owner). See state reference for applicable legal standards.
 
 ### Rezoning / Map Amendment
 1. Application submitted (or initiated by municipality)

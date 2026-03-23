@@ -17,18 +17,17 @@ This plugin automates common workflows for municipal elected officials and staff
 
 ## Quick Start
 
-1. Install the plugin (see Installation below)
-2. Run the **Setup Municipality** agent from the Agents tab to configure your municipality interactively — or edit `municipal.local.md` manually
-3. Try `/municipal-governance:agenda-synthesis` with an uploaded agenda packet PDF
-
-That's it — most commands work immediately with just an uploaded document and your municipal configuration.
+1. **Install** the plugin
+2. **Customize** — Click "Customize plugin settings" to configure your municipality
+3. **Create workspace** — Run the **Setup Project** agent to scaffold a Cowork Project folder
+4. **Try it** — Upload an agenda packet and run `/municipal-governance:agenda-synthesis`
 
 ## Installation
 
-### Claude Desktop (Cowork)
+### Cowork (Claude Desktop)
 
 1. Download or clone this repository
-2. In Claude Desktop, go to **Settings > Plugins > Install from folder**
+2. In Cowork, go to **Settings > Plugins > Install from folder**
 3. Select the `CivicWorkPlugin` directory
 4. The plugin's commands will appear as `/municipal-governance:*`
 
@@ -37,10 +36,36 @@ That's it — most commands work immediately with just an uploaded document and 
 1. Clone this repository
 2. Open Claude Code in the repository directory — plugin files are detected automatically
 
-### After Installation
+### Setup (Cowork)
 
-1. **Configure your municipality** — Open the **Setup Municipality** agent from the Agents tab. It will walk you through the setup interactively and fill in `municipal.local.md` for you. Alternatively, edit `municipal.local.md` manually in a text editor.
-2. **(Optional) Configure connectors** — See [Connectors](#connectors) below to enable live municipal code lookup.
+1. **Configure your municipality** — Click **"Customize plugin settings"** on the Cowork home screen. Cowork auto-discovers most municipality info via web search (population, government type, council structure, code provider, meeting schedule) and asks you about what it can't find. This writes `municipal.local.md`.
+
+2. **Create a project workspace** — Run the **Setup Project** agent from the Agents tab. It creates a folder on your computer with the right structure for governance work:
+
+   ```
+   ~/Municipal-Governance/{your-city}/
+   ├── CLAUDE.md              ← Project instructions (auto-generated)
+   ├── documents/
+   │   ├── agendas/           ← Drop agenda packets here
+   │   ├── budgets/           ← Budget documents, AFRs
+   │   ├── ordinances/        ← Proposed ordinances under review
+   │   └── plans/             ← Comprehensive plan, strategic plan, CIP
+   ├── meeting-notes/         ← Post-meeting summaries and action items
+   └── research/              ← Saved policy research
+   ```
+
+   Then point Cowork to it: **"Work in a project" → "+" → "Use an existing folder"** → select the created folder.
+
+3. **(Optional) Configure connectors** — See [Connectors](#connectors) below to enable live municipal code lookup.
+
+### Setup (Claude Code CLI)
+
+1. Run the **Setup Municipality** agent — it walks you through the full configuration interactively and offers to create a project workspace at the end.
+2. Or edit `municipal.local.md` manually.
+
+### Why a Project Workspace?
+
+The plugin provides analytical tools. The project workspace provides **persistent memory**. With a Cowork Project, Claude remembers prior meeting decisions, research, and your preferences across sessions — building institutional knowledge over time. Without it, every conversation starts fresh.
 
 ## Commands
 
@@ -57,22 +82,23 @@ That's it — most commands work immediately with just an uploaded document and 
 
 ## Configuration
 
-Edit `municipal.local.md` to configure:
+The plugin uses a three-layer architecture:
 
-- Municipality name, state, and government type
-- Council structure and meeting schedule
-- Municipal code provider and key code references
-- Agenda management system
-- Budget context and fiscal year
-- Current policy priorities
-- Organizational contacts and committees
-- State law requirements (Open Meetings Act, FOIA references)
+| Layer | File | What it contains |
+|-------|------|-----------------|
+| **Municipality config** | `municipal.local.md` | Your council structure, contacts, fiscal context, priorities |
+| **State reference** | `state-references/{STATE}.md` | Statutory requirements, deadlines, thresholds, penalties |
+| **Skills** | `skills/*/SKILL.md` | Analytical frameworks (state-agnostic) |
 
-The plugin works for **any US municipality** — `municipal.local.md` is where you make it yours.
+**`municipal.local.md`** is created when you customize the plugin. It includes: municipality name, state, government type, council structure, meeting schedule, code provider, budget context, fiscal thresholds, policy priorities, contacts, and committee structure.
+
+**State references** provide jurisdiction-specific statutory content — statute citations, compliance deadlines, dollar thresholds, penalty structures, and institutional resources. Currently available: **Illinois** (`state-references/IL.md`). Additional states can be contributed by following the IL.md structure as a template.
+
+The plugin works for **any US municipality**. State references add precision for compliance-critical areas; without one for your state, skills provide general framework guidance with a recommendation to verify state-specific requirements with legal counsel.
 
 ## Skills
 
-The plugin includes 10 domain expertise modules. You don't invoke these directly — Claude activates them automatically based on what you're working on.
+The plugin includes 12 domain expertise modules. You don't invoke these directly — Claude activates them automatically based on what you're working on.
 
 | Skill | What it covers | Example prompt |
 |-------|---------------|----------------|
@@ -86,6 +112,7 @@ The plugin includes 10 domain expertise modules. You don't invoke these directly
 | `council-communication` | Staff reports, ordinances vs resolutions, legal drafting, constituent triage | "Should this be an ordinance or a resolution?" |
 | `ethics-conflicts` | Conflicts of interest, recusal procedures, gift rules, financial disclosure | "Do I need to recuse myself from this vote?" |
 | `vendor-assessment` | Vendor lock-in, build-vs-buy, technical decomposition, procurement analysis | "Should we renew this contract or build our own?" |
+| `vendor-alternatives` | Municipal software alternatives, replacement tiers, open-source landscape | "What open-source options exist for agenda management?" |
 
 ## Connectors
 
@@ -101,7 +128,7 @@ Seven of the ten skills include domain-specific search patterns for `municipal-c
 
 1. You run a command (e.g., `/municipal-governance:meeting-prep`) and upload a document
 2. Claude asks a few quick scoping questions — what items matter to you, how deep should the analysis go
-3. Claude loads your municipality's configuration from `municipal.local.md`
+3. Claude loads your municipality's configuration from `municipal.local.md` and the applicable state reference from `state-references/`
 4. Relevant skills activate automatically based on the subject matter
 5. You get structured output with attention-priority flags (red/yellow/green), confidence indicators on key claims, and recommended next steps — matched to the depth you asked for
 6. For high-stakes items, the output includes an **Analysis Boundaries** section — a transparent disclosure of what the analysis can and cannot responsibly conclude as a single AI instance, with specific recommendations for verification (attorney review, staff confirmation, or escalation to PolicyAide's multi-agent deliberation framework)
@@ -112,4 +139,4 @@ Most AI tools pretend they can handle everything. This plugin tells you when it'
 
 ## License
 
-MIT License - Built by [CivicWork](https://civicwork.ai)
+Apache 2.0 License — Built by [CivicWork](https://civicwork.ai)

@@ -1,11 +1,11 @@
 {
   "name": "municipal-governance",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "AI-powered productivity plugin for local government elected officials and staff. Automates ordinance analysis, meeting preparation, policy research, constituent communications, budget review, vendor evaluation, and more — all configurable to your municipality's specific code, procedures, and priorities.",
   "author": {
     "name": "CivicWork"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://civicwork.ai",
   "keywords": [
     "municipal",

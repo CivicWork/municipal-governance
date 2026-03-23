@@ -10,6 +10,12 @@ description: >
 
 # Ethics and Conflict of Interest
 
+## State-Specific Requirements
+
+This skill provides general frameworks for ethics, conflicts of interest, and financial disclosure compliance. For jurisdiction-specific statutes, filing deadlines, dollar thresholds, and penalty structures, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**Critical**: Ethics filing deadlines, gift ban thresholds, and disclosure requirements are entirely state-specific. Failure to file on time can result in forfeiture of office in some states. Always apply the exact numbers from the state reference — do not use approximate ranges.
+
 ## Overview
 
 Ethics rules for local government officials exist to maintain public trust by ensuring decisions are made in the public interest, not for private gain. Violations can carry serious consequences: removal from office, criminal penalties, voided actions, and lasting reputational damage.
@@ -80,7 +86,7 @@ When recusing from a matter:
 Most states and many municipalities have gift bans or restrictions for public officials. Common provisions:
 
 - **Prohibited gifts**: From regulated entities, vendors, lobbyists, or anyone with pending business before the official's body
-- **De minimis exceptions**: Small-value items (typically $25-$75 depending on jurisdiction) may be exempt
+- **De minimis exceptions**: Small-value items may be exempt — see state reference for exact thresholds (e.g., Illinois: $75/person/day for food/refreshments, $100/year cumulative per prohibited source)
 - **Food and beverage**: Often limited to modest meals at events where the official is a speaker or attendee
 - **Campaign contributions**: Governed separately from gift bans; different rules apply
 - **Exceptions**: Gifts from family, awards/plaques, informational materials, items available to the general public
@@ -110,7 +116,7 @@ Most states require elected officials and certain staff to file annual financial
 
 ### Filing Requirements
 
-- **Timing**: Typically due within 30-60 days of taking office, then annually
+- **Timing**: Filing deadline is state-specific — see state reference for exact date, late fee schedule, and forfeiture consequences (e.g., Illinois: May 1 annually, forfeiture of office if not filed by May 31)
 - **Updates**: Material changes may require amended filings
 - **Public record**: Most disclosure forms are available to the public
 - **Penalties**: Late or incomplete filing can result in fines or disqualification
@@ -186,7 +192,7 @@ When connected tools are unavailable, reference the state ethics statute cited i
 
 Check `municipal.local.md` for:
 - State ethics statute reference
-- Local ethics ordinance (if any)
+- Local ethics ordinance (required in many states — check state reference; e.g., Illinois mandates every municipality adopt one under 5 ILCS 430/Article 70)
 - Ethics commission or officer contact
 - Gift ban thresholds
 - Financial disclosure filing deadlines

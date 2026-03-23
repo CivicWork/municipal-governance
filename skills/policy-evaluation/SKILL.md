@@ -14,7 +14,7 @@ Effective policy evaluation provides decision-makers with objective analysis of 
 
 ## Policy Analysis Framework
 
-### The Eightfold Path (Bardach)
+### The Eightfold Path (Bardach & Patashnik, *A Practical Guide for Policy Analysis*, **7th Edition**, 2024, SAGE/CQ Press)
 1. **Define the problem**: What exactly needs to be addressed?
 2. **Assemble evidence**: What do we know about the problem?
 3. **Construct alternatives**: What are the possible solutions?
@@ -23,6 +23,8 @@ Effective policy evaluation provides decision-makers with objective analysis of 
 6. **Confront trade-offs**: What are we giving up?
 7. **Decide**: Recommend an option
 8. **Tell your story**: Communicate clearly
+
+**Audience note**: Bardach's framework was designed for professional policy analysts with dedicated research capacity. For part-time elected officials in small municipalities, consider combining Steps 4-6 into a single weighted comparison matrix, and focusing evidence assembly on peer city comparisons and state municipal league resources rather than academic research.
 
 ### Problem Definition
 

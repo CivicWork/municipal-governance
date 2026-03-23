@@ -8,6 +8,12 @@ description: >
 
 # Public Finance
 
+## State-Specific Requirements
+
+This skill provides general frameworks for municipal finance analysis. For jurisdiction-specific property tax mechanics, budget system options, levy deadlines, audit requirements, and pension landscape details, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**Critical**: Property tax limitation mechanics (e.g., Illinois PTELL limits extensions, not rates), budget system choices, pension funded ratios, and statutory funding deadlines are entirely state-specific. The state reference contains exact thresholds, deadlines, and institutional context that must be applied to any financial analysis.
+
 ## Overview
 
 Municipal finance differs significantly from private sector accounting. Understanding fund accounting, revenue constraints, and budgeting processes is essential for effective governance and fiscal oversight.
@@ -46,6 +52,8 @@ Municipal finance differs significantly from private sector accounting. Understa
 4. **Assigned**: Intended use designated
 5. **Unassigned**: Available for any purpose
 
+**GFOA best practice**: Minimum unrestricted general fund balance of **no less than two months** of regular general fund operating revenues or operating expenditures (~16-17%), with many situations warranting significantly more. Must be a formally adopted policy addressing conditions for use, replenishment plans, and prohibition on using excess fund balance for ongoing recurring expenditures.
+
 ## Revenue Sources
 
 ### Property Tax
@@ -56,7 +64,7 @@ Municipal finance differs significantly from private sector accounting. Understa
 - **Extension**: Actual tax bills sent
 
 **Property Tax Limitations** (vary by state — check `municipal.local.md`):
-- **Levy growth caps**: Limit annual increase to CPI or fixed percentage (e.g., PTELL in IL, Prop 2½ in MA)
+- **Levy growth caps**: Limit annual increase in **extensions** (total levy growth, not rates or individual bills) to CPI or fixed percentage — see state reference for exact mechanics, geographic scope, and home rule exemptions (e.g., Illinois PTELL: lesser of 5% or CPI, applies in 39 of 102 counties, home rule exempt)
 - **Assessment rollbacks**: Require rate reduction when values increase (e.g., Headlee in MI)
 - **Rate/assessment caps**: Limit rate and assessment growth (e.g., Prop 13 in CA)
 - **Voter approval requirements**: Require referendum for increases (e.g., TABOR in CO)
@@ -252,7 +260,9 @@ OPEB refers primarily to retiree health insurance, but can include dental, visio
 
 ## Capital Improvement Planning (CIP)
 
-A Capital Improvement Plan is a multi-year (typically 5-10 year) schedule of major infrastructure investments, linking strategic priorities to funded projects.
+A Capital Improvement Plan is a multi-year schedule of major infrastructure investments, linking strategic priorities to funded projects. **GFOA recommends CIPs covering at least 3 years, preferably 5+**, prioritizing by health/safety, projecting future operating costs, and evaluating affordability including impact on debt ratios and tax rates.
+
+**GFOA also recommends all governments** prepare long-range financial plans projecting revenues, expenses, and financial position a **minimum 5 years** into the future, reviewed annually.
 
 ### Purpose
 - Plan and prioritize major capital expenditures

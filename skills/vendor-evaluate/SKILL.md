@@ -11,6 +11,12 @@ description: >
 
 # Vendor Evaluate
 
+## State-Specific Requirements
+
+For jurisdiction-specific procurement thresholds, competitive bidding requirements, and cooperative purchasing authorities, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**Key items from state reference**: Competitive bidding dollar thresholds (e.g., Illinois requires competitive bidding above $25,000 for public works per 65 ILCS 5/8-9-1; technology purchases may have different thresholds or more municipal discretion), joint purchasing enabling statutes, cooperative purchasing programs.
+
 Analyze a municipal vendor contract, decompose what's being purchased into component capabilities, assess lock-in risk, and produce a technical feasibility spec for open-source alternatives.
 
 ## Trigger
@@ -221,7 +227,27 @@ For each layer of the Trust Stack, assess whether the deployment approach meets 
 
 *The Verifiability Framework and Trust Stack are open governance frameworks published by CivicWork. Learn more at civicwork.ai.*
 
-### 9. Generate Evaluation Report
+### 9. Replacement Roadmap
+
+Reference the `vendor-alternatives` skill to identify the software category and produce a replacement roadmap. This section transforms the technical build feasibility spec into plain-language, actionable guidance.
+
+**Step 9a: Classify the software category** — Map the vendor's product to one of the municipal software categories in `vendor-alternatives` (Website/CMS, Document Management, GIS, Constituent Services/311, Agenda Management, Permitting, Meeting Video, Financial/ERP, Code Publishing, Pension Administration). If the product spans multiple categories, address each separately.
+
+**Step 9b: Apply the tier** — Based on the category, state the replacement tier (1-4) and what it means for this municipality specifically, calibrated to their IT capacity from `municipal.local.md`.
+
+**Step 9c: Produce the roadmap** — The roadmap format depends on the tier:
+
+**Tier 1 (Deploy and Configure)**: Full replacement roadmap with specific starting point, implementation steps, migration checklist, timeline, and cost estimate.
+
+**Tier 2 (Municipal Wrapper Needed)**: Describe what building blocks exist, what municipal-specific work is needed, estimated development effort, and whether the vendor cost justifies that effort. Recommend a scoping exercise as the next step rather than immediate build.
+
+**Tier 3 (Build from Scratch)**: Explain why no ready alternative exists. Recommend contract negotiation strategies and suggest watching for community efforts. If the vendor contract has specific pain points, identify which components could be addressed with targeted tools even if the full system can't be replaced.
+
+**Tier 4 (Keep the Vendor)**: State plainly that this is not a good replacement candidate and why. Redirect to contract negotiation: data ownership clauses, export provisions, API access, favorable renewal terms. Reference the lock-in mitigation strategies from `vendor-assessment`.
+
+**Always include the "When to NOT Replace" assessment** — even for Tier 1 categories, there may be reasons to stay with the vendor (staff capacity, migration risk, remaining contract term, integration dependencies). Be honest about these.
+
+### 10. Generate Evaluation Report
 
 ## Output Format
 
@@ -383,6 +409,69 @@ For each layer of the Trust Stack, assess whether the deployment approach meets 
 
 ---
 
+## Replacement Roadmap
+
+### Category: [Municipal software category]
+### Replacement Tier: [1/2/3/4] — [Deploy and Configure / Municipal Wrapper Needed / Build from Scratch / Keep the Vendor]
+
+[2-3 sentence plain-language explanation of what this tier means for this municipality specifically.]
+
+<!-- For Tier 1: Full roadmap -->
+
+### Recommended Approach
+[Build / Migrate to open-source / Hybrid / Stay with vendor — with reasoning calibrated to municipality's IT capacity]
+
+### Starting Point
+[Specific open-source project to start from, with brief description of why this one]
+
+### What You Gain by Replacing
+- [Gain 1 — e.g., full data ownership]
+- [Gain 2 — e.g., no annual licensing fee]
+- [Gain 3 — e.g., customization freedom]
+
+### What You Lose by Replacing
+- [Loss 1 — e.g., vendor support]
+- [Loss 2 — e.g., automatic updates]
+- [Loss 3 — e.g., specific feature the open-source tool doesn't have]
+
+### Implementation Steps (Plain Language)
+1. **[Step]** — [Who does it, estimated effort, what "done" looks like]
+2. **[Step]** — [Who does it, estimated effort]
+3. **[Step]** — [Who does it, estimated effort]
+
+### Migration Checklist
+- [ ] Export data from current vendor ([format, method])
+- [ ] Set up new system ([where, how])
+- [ ] Migrate data ([process, validation])
+- [ ] Staff training ([who, how long])
+- [ ] Parallel operation period ([how long, what to watch for])
+- [ ] Cutover and vendor contract wind-down
+
+### When to NOT Replace
+[Honest assessment of situations where the vendor is the better choice — even though replacement is technically feasible. Consider: remaining contract term, staff capacity, integration dependencies, migration risk, political timing.]
+
+### Estimated Cost and Timeline
+
+| | Vendor (Current) | Replacement | Notes |
+|---|---|---|---|
+| Year 1 | $[X] | $[X] (migration + setup) | [Assumptions] |
+| Year 2 | $[X] | $[X] (maintenance) | |
+| Year 3 | $[X] | $[X] (maintenance) | |
+| **Break-even** | — | **[Year X]** | [When cumulative savings exceed migration cost] |
+
+<!-- For Tier 3/4: Contract negotiation focus -->
+<!-- Replace the above sections with:
+### Why Replacement Is Not Recommended
+[Plain-language explanation]
+
+### Contract Negotiation Priorities
+1. [Specific clause to negotiate — e.g., data export in standard formats at termination]
+2. [Specific clause — e.g., API access for integration]
+3. [Specific clause — e.g., price escalation cap]
+-->
+
+---
+
 ## Questions for Deliberation
 
 1. [Question that surfaces a key tradeoff or concern]
@@ -433,6 +522,7 @@ Contract terms should be reviewed by the municipal attorney.*
 
 **Primary:**
 - `vendor-assessment` — technical decomposition methodology, lock-in evaluation framework, build-vs-buy analysis, governance framework overlay
+- `vendor-alternatives` — municipal software category classification, replacement tier system, open-source alternatives knowledge base, replacement roadmap generation
 
 **Secondary:**
 - `public-finance` — cost comparison methodology, fiscal impact classification, contract authority thresholds
@@ -449,6 +539,9 @@ Contract terms should be reviewed by the municipal attorney.*
 - Flag any contract terms that would affect FOIA compliance — vendor-held data about public interactions may be subject to public records requirements.
 - The governance framework overlay is always opt-in. Never include it unless the user requested it.
 - Build feasibility produces specs, not code. The plugin recommends — humans decide.
+- The Replacement Roadmap must be honest about Tier 3/4 categories. Recommending replacement for everything destroys credibility. When the vendor is the right answer, say so and redirect to contract negotiation.
+- Calibrate all recommendations to the municipality's IT capacity from `municipal.local.md`. A replacement that requires a DevOps team is not a real option for a city with one IT generalist.
+- Always recommend starting with a pilot (one department, one workflow) before committing to full migration.
 
 ## Related Skills
 

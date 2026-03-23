@@ -9,6 +9,12 @@ description: >
 
 # Intergovernmental Relations
 
+## State-Specific Requirements
+
+This skill provides general frameworks for intergovernmental relations, home rule analysis, and preemption assessment. For jurisdiction-specific constitutional provisions, enabling statutes, and current preemption landscape, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+
+**Critical for non-home-rule municipalities**: The distinction between home rule and non-home-rule authority is the most fundamental legal question for the target audience. Non-home-rule municipalities operate under Dillon's Rule — they possess only powers expressly granted by state law. Every recommendation must be evaluated against this constraint. See the state reference for constitutional framework, population thresholds, and specific limitations.
+
 ## Overview
 
 Local governments operate within a complex web of federal, state, and regional relationships. Understanding these relationships is essential for effective governance, policy development, and avoiding legal pitfalls.
@@ -58,7 +64,7 @@ Home rule provisions vary significantly by state. Check `municipal.local.md` for
 - **Concurrent vs. exclusive** preemption mechanisms
 - **Subject-matter exclusions** (e.g., income tax, certain licensing)
 
-Consult your state constitution and municipal code for the specific grant of home rule authority.
+Consult your state constitution and municipal code for the specific grant of home rule authority. For state-specific constitutional provisions, population thresholds, home rule limitations, and enabling statutes, see `state-references/` for the user's state.
 
 ## State Preemption
 
@@ -70,11 +76,12 @@ Consult your state constitution and municipal code for the specific grant of hom
 ### Common Preemption Areas
 - Firearms regulation
 - Minimum wage
-- Plastic bag bans
 - Rent control
 - Employment regulations
 - Telecommunications
 - Ride-sharing regulation
+
+Note: Some areas commonly assumed to be preempted are actually local authority in many states. Check the state reference — e.g., in Illinois, plastic bag/environmental regulation and short-term rental regulation are NOT preempted.
 
 ### Responding to Preemption
 1. Verify preemption applies (scope analysis)
