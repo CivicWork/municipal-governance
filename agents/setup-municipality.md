@@ -62,8 +62,9 @@ If not already discovered in Step 2, ask about:
 - Who publishes your municipal code? (Municode, American Legal, Sterling Codifiers, General Code, etc.)
 - What is the URL for the online code library?
 
-**Always ask** (these aren't auto-discoverable):
-- What are the key title/chapter references for zoning and subdivision codes?
+**Auto-discover if possible** (search the municipal code table of contents via Municode or the code publisher's website):
+- Key title/chapter references for zoning and subdivision codes
+- If you can't find them, skip — the plugin can look these up at runtime via MunicipalMCP
 
 **Agenda system** (skip if Legistar/Granicus was already found):
 - What system manages agendas? (Legistar, Granicus, CivicEngage, manual/email, etc.)

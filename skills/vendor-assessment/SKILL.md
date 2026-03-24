@@ -13,7 +13,7 @@ description: >
 
 ## State-Specific Requirements
 
-For jurisdiction-specific procurement thresholds, competitive bidding requirements, and cooperative purchasing authorities, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+**Before providing procurement guidance, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois) for jurisdiction-specific procurement thresholds, competitive bidding requirements, and cooperative purchasing authorities.
 
 **Key items from state reference**: Competitive bidding dollar thresholds, joint purchasing enabling statutes, cooperative purchasing programs. For small municipalities (~15,000 population), cooperative purchasing through state contracts and joint purchasing programs is typically the most cost-effective procurement strategy.
 

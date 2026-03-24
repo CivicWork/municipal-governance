@@ -13,7 +13,7 @@ description: >
 
 ## State-Specific Requirements
 
-For jurisdiction-specific procurement thresholds, competitive bidding requirements, and cooperative purchasing authorities, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+**Before providing procurement guidance, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois) for jurisdiction-specific procurement thresholds, competitive bidding requirements, and cooperative purchasing authorities.
 
 **Key items from state reference**: Competitive bidding dollar thresholds (e.g., Illinois requires competitive bidding above $25,000 for public works per 65 ILCS 5/8-9-1; technology purchases may have different thresholds or more municipal discretion), joint purchasing enabling statutes, cooperative purchasing programs.
 

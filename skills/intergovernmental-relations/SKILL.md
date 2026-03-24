@@ -11,7 +11,7 @@ description: >
 
 ## State-Specific Requirements
 
-This skill provides general frameworks for intergovernmental relations, home rule analysis, and preemption assessment. For jurisdiction-specific constitutional provisions, enabling statutes, and current preemption landscape, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+This skill provides general frameworks for intergovernmental relations, home rule analysis, and preemption assessment. **Before providing any guidance on home rule, preemption, or intergovernmental authority, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois). Do not give generic answers when a state reference exists — read it and cite the specific constitutional provisions, enabling statutes, and current preemption landscape.
 
 **Critical for non-home-rule municipalities**: The distinction between home rule and non-home-rule authority is the most fundamental legal question for the target audience. Non-home-rule municipalities operate under Dillon's Rule — they possess only powers expressly granted by state law. Every recommendation must be evaluated against this constraint. See the state reference for constitutional framework, population thresholds, and specific limitations.
 

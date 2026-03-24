@@ -10,7 +10,7 @@ description: >
 
 ## State-Specific Requirements
 
-This skill provides general frameworks for open meetings and public records compliance. For jurisdiction-specific statutes, deadlines, thresholds, and penalties, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+This skill provides general frameworks for open meetings and public records compliance. **Before providing any compliance guidance, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois). Do not give generic "varies by state" answers when a state reference exists — read it and cite the specific statutes, deadlines, and penalties.
 
 **The state reference is mandatory for compliance guidance.** Open meetings and FOIA requirements vary dramatically by state — deadlines, notice periods, closed session exceptions, penalty structures, and recording requirements are all state-specific. Generic guidance without state-specific statutory backing is insufficient for compliance purposes.
 

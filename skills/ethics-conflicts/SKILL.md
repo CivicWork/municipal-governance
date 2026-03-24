@@ -12,7 +12,7 @@ description: >
 
 ## State-Specific Requirements
 
-This skill provides general frameworks for ethics, conflicts of interest, and financial disclosure compliance. For jurisdiction-specific statutes, filing deadlines, dollar thresholds, and penalty structures, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+This skill provides general frameworks for ethics, conflicts of interest, and financial disclosure compliance. **Before providing any compliance guidance, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois). Do not give generic "varies by state" answers when a state reference exists — read it and cite the specific statutes, filing deadlines, dollar thresholds, and penalties.
 
 **Critical**: Ethics filing deadlines, gift ban thresholds, and disclosure requirements are entirely state-specific. Failure to file on time can result in forfeiture of office in some states. Always apply the exact numbers from the state reference — do not use approximate ranges.
 

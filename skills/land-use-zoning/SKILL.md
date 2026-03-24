@@ -11,7 +11,7 @@ description: >
 
 ## State-Specific Requirements
 
-This skill provides general frameworks for zoning and land use analysis. For jurisdiction-specific enabling authority, procedural deadlines, legal standards, and court-established reasonableness tests, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+This skill provides general frameworks for zoning and land use analysis. **Before providing any zoning or land use guidance, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois). Do not give generic answers when a state reference exists — read it and cite the specific enabling authority, procedural deadlines, legal standards, and court-established reasonableness tests.
 
 **Critical for non-home-rule municipalities**: Zoning authority derives entirely from state enabling legislation. Non-home-rule municipalities can only exercise powers explicitly granted. The state reference identifies the specific statutory sections, enumerated powers, notice periods, decision deadlines, and appeal timelines that govern all zoning actions.
 

@@ -10,7 +10,7 @@ description: >
 
 ## State-Specific Requirements
 
-This skill provides general frameworks for municipal finance analysis. For jurisdiction-specific property tax mechanics, budget system options, levy deadlines, audit requirements, and pension landscape details, load the applicable state reference from `state-references/` based on the state in `municipal.local.md`.
+This skill provides general frameworks for municipal finance analysis. **Before providing any fiscal analysis, you MUST read `state-references/{STATE}.md`** (where {STATE} is the state abbreviation from `municipal.local.md`, e.g., `state-references/IL.md` for Illinois). Do not give generic answers when a state reference exists — read it and cite the specific property tax mechanics, budget system options, levy deadlines, audit requirements, and pension landscape details.
 
 **Critical**: Property tax limitation mechanics (e.g., Illinois PTELL limits extensions, not rates), budget system choices, pension funded ratios, and statutory funding deadlines are entirely state-specific. The state reference contains exact thresholds, deadlines, and institutional context that must be applied to any financial analysis.
 
